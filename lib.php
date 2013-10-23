@@ -47,11 +47,11 @@ function theme_udcessential_set_fontwww($css) {
     }
     $tag = '[[setting:fontwww]]';
     
-    $theme = theme_config::load('essential');
+    $theme = theme_config::load('udcessential');
     if (!empty($theme->settings->bootstrapcdn)) {
     	$css = str_replace($tag, 'http://netdna.bootstrapcdn.com/font-awesome/3.2.1/font/', $css);
     } else {
-    	$css = str_replace($tag, $themewww.'/essential/fonts/', $css);
+    	$css = str_replace($tag, $themewww.'/udcessential/fonts/', $css);
     }
     return $css;
 }
@@ -88,7 +88,7 @@ function theme_udcessential_set_logo($css, $logo) {
  */
 function theme_udcessential_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM) {
-        $theme = theme_config::load('essential');
+        $theme = theme_config::load('udcessential');
         if ($filearea === 'logo') {
             return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
         } else if ($filearea === 'pagebackground') {
@@ -133,9 +133,9 @@ function theme_udcessential_pluginfile($course, $cm, $context, $filearea, $args,
 function essential_set_editicons($css, $editicons) {
 	global $CFG;
 	if (!empty($CFG->themedir)) {
-		$editiconsurl = $CFG->themedir . '/essential/style/editicons.css'; //Pull the full path for autohide css
+		$editiconsurl = $CFG->themedir . '/udcessential/style/editicons.css'; //Pull the full path for autohide css
 	} else {
-		$editiconsurl = $CFG->dirroot . '/theme/essential/style/editicons.css'; //MDL-36065
+		$editiconsurl = $CFG->dirroot . '/theme/udcessential/style/editicons.css'; //MDL-36065
 	}
     $tag = '[[setting:editicons]]';
     if ($editicons) { //Setting is "YES"
@@ -159,9 +159,9 @@ function essential_set_editicons($css, $editicons) {
 function essential_set_autohide($css, $autohide) {
 	global $CFG;
 	if (!empty($CFG->themedir)) {
-		$autohideurl = $CFG->themedir . '/essential/style/autohide.css'; //Pull the full path for autohide css
+		$autohideurl = $CFG->themedir . '/udcessential/style/autohide.css'; //Pull the full path for autohide css
 	} else {
-		$autohideurl = $CFG->dirroot . '/theme/essential/style/autohide.css'; //MDL-36065
+		$autohideurl = $CFG->dirroot . '/theme/udcessential/style/autohide.css'; //MDL-36065
 	}
     $tag = '[[setting:autohide]]';
     if ($autohide) { //Setting is "YES"
