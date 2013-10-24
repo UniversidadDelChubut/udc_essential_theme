@@ -28,7 +28,7 @@ $settings = null;
 defined('MOODLE_INTERNAL') || die;
 
 
-	$ADMIN->add('themes', new admin_category('theme_udcessential', 'UdcEssential'));
+	$ADMIN->add('themes', new admin_category('theme_udcessential', 'UDCEssential'));
 
 	// "geneicsettings" settingpage
 	$temp = new admin_settingpage('theme_udcessential_generic',  get_string('geneicsettings', 'theme_udcessential'));

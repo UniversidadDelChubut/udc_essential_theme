@@ -130,7 +130,7 @@ function theme_udcessential_pluginfile($course, $cm, $context, $filearea, $args,
  * @param mixed $autohide
  * @return string
  */
-function essential_set_editicons($css, $editicons) {
+function udcessential_set_editicons($css, $editicons) {
 	global $CFG;
 	if (!empty($CFG->themedir)) {
 		$editiconsurl = $CFG->themedir . '/udcessential/style/editicons.css'; //Pull the full path for autohide css
@@ -156,7 +156,7 @@ function essential_set_editicons($css, $editicons) {
  * @return string
  * This code originally written for the Zebra theme by Danny Wahl
  */
-function essential_set_autohide($css, $autohide) {
+function udcessential_set_autohide($css, $autohide) {
 	global $CFG;
 	if (!empty($CFG->themedir)) {
 		$autohideurl = $CFG->themedir . '/udcessential/style/autohide.css'; //Pull the full path for autohide css
@@ -182,7 +182,7 @@ function essential_set_autohide($css, $autohide) {
  *
  * @return string
  */
-function essential_performance_output($param) {
+function udcessential_performance_output($param) {
 	
     $html = '<div class="container-fluid performanceinfo"><div class="row-fluid"><h2>Performance Information</h2></div><div class="row-fluid">';
 	if (isset($param['realtime'])) $html .= '<div class="span3"><a href="#"><var id="load">'.$param['realtime'].' secs</var><span>Load Time</span></a></div>';
@@ -202,7 +202,7 @@ function essential_performance_output($param) {
  * @param string $customcss The custom CSS to add.
  * @return string The CSS which now contains our custom CSS.
  */
-function essential_set_customcss($css, $customcss) {
+function udcessential_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     if (is_null($replacement)) {
@@ -414,7 +414,7 @@ function theme_udcessential_process_css($css, $theme) {
     } else {
         $editicons = null;
     }
-    $css = essential_set_editicons($css, $editicons);
+    $css = udcessential_set_editicons($css, $editicons);
     
     //Get the autohide value from settings
     if (!empty($theme->settings->autohide)) {
@@ -422,7 +422,7 @@ function theme_udcessential_process_css($css, $theme) {
     } else {
         $autohide = null;
     }
-    $css = essential_set_autohide($css, $autohide);
+    $css = udcessential_set_autohide($css, $autohide);
     
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
@@ -430,7 +430,7 @@ function theme_udcessential_process_css($css, $theme) {
     } else {
         $customcss = null;
     }
-    $css = essential_set_customcss($css, $customcss);
+    $css = udcessential_set_customcss($css, $customcss);
 
     // Set the background image for the logo.
     $logo = $theme->setting_file_url('logo', 'logo');
