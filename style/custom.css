@@ -1847,6 +1847,12 @@ body,
 /* @end */
 
 /**
+ * mas estilos by UDC
+ */
+.logininfo div#login_dropdown {padding: 15px; padding-bottom: 0px; color: gray !important;}
+.logininfo a.forgot-password:hover {text-decoration: underline !important;}
+
+/**
  * editicons CSS
  * This adds the special editicons css in editicons.css if the setting is enabled.
  */
