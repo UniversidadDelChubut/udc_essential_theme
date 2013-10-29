@@ -1025,7 +1025,7 @@ table#greyboxleft h2 {
 
 /* @group Frontpage */
 #site-news-forum,
-#frontpage-course-list,
+/*#frontpage-course-list,*/
 #frontpage-category-combo,
 #frontpage-category-names {
 	background: url([[pix:theme|bg/dot]]) left top repeat-x;

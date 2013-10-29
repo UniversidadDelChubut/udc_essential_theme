@@ -12,7 +12,7 @@
             <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
         </div>
     </div>
-    
+    <?php /* 
     <div class="span4">
         <!-- Advert #2 -->
         <div class="service">
@@ -40,4 +40,5 @@
             <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing3buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing3buttontext ?></a></p>
         </div>
     </div>
+    */ ?>
 </div>

@@ -170,120 +170,130 @@ echo $OUTPUT->doctype() ?>
     </nav>
 </header>
 
-<div id="page" class="container-fluid">
+<div id="page" class="container-fluid"> 
+    
+  <div class="row-fluid span12">
 
-<!-- Start Alerts -->
-
-<!-- Alert #1 -->
-<?php if ($hasalert1) { ?>  
-	<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
-	<a class="close" data-dismiss="alert" href="#">×</a>
-	<?php 
-	if ($PAGE->theme->settings->alert1type == 'info') {
-		$alert1icon = $alertinfo;
-    } else if ($PAGE->theme->settings->alert1type == 'error') {
-    	$alert1icon = $alertwarning;
-   	} else {
-   		$alert1icon = $alertsuccess;
-   	} 
-   	echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->alert1title.'</span>'.$PAGE->theme->settings->alert1text; ?> 
-</div>
-<?php } ?>
-
-<!-- Alert #2 -->
-<?php if ($hasalert2) { ?>  
-	<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
-	<a class="close" data-dismiss="alert" href="#">×</a>
-	<?php 
-	if ($PAGE->theme->settings->alert2type == 'info') {
-		$alert2icon = $alertinfo;
-    } else if ($PAGE->theme->settings->alert2type == 'error') {
-    	$alert2icon = $alertwarning;
-   	} else {
-   		$alert2icon = $alertsuccess;
-   	} 
-   	echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->alert2title.'</span>'.$PAGE->theme->settings->alert2text; ?> 
-</div>
-<?php } ?>
-
-<!-- Alert #3 -->
-<?php if ($hasalert3) { ?>  
-	<div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
-	<a class="close" data-dismiss="alert" href="#">×</a>
-	<?php 
-	if ($PAGE->theme->settings->alert3type == 'info') {
-		$alert3icon = $alertinfo;
-    } else if ($PAGE->theme->settings->alert3type == 'error') {
-    	$alert3icon = $alertwarning;
-   	} else {
-   		$alert3icon = $alertsuccess;
-   	} 
-   	echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->alert3title.'</span>'.$PAGE->theme->settings->alert3text; ?> 
-</div>
-<?php } ?>
-<!-- End Alerts -->
-
-<!-- Start Slideshow -->
-<?php 
-	if($PAGE->theme->settings->toggleslideshow==1) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings-> toggleslideshow==2 && !isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} else if($PAGE->theme->settings-> toggleslideshow==3 && isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/slideshow.php');
-	} 
-?>
-<!-- End Slideshow -->
-
-<!-- Start Frontpage Content -->
-<?php if($PAGE->theme->settings->usefrontcontent ==1) { 
-	echo $PAGE->theme->settings->frontcontentarea;
-	?>
-	<div class="bor" style="margin-top: 10px;"></div>	
-<?php }?>
-<!-- End Frontpage Content -->
-
-
-<!-- Start Marketing Spots -->
-<?php 
-	if($PAGE->theme->settings->togglemarketing==1) {
-		require_once(dirname(__FILE__).'/includes/marketingspots.php');
-	} else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/marketingspots.php');
-	} else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
-		require_once(dirname(__FILE__).'/includes/marketingspots.php');
-	} 
-?>
-<!-- End Marketing Spots -->
-
-<div id="page-content" class="row-fluid">
-	<div id="<?php echo $regionbsid ?>" class="span12">
-		<div class="row-fluid">
-			<div id="region-main-essential">
-				<section id="region-main" class="span8 desktop-first-column">
-				<?php
-				echo $OUTPUT->course_content_header();
-				echo $OUTPUT->main_content();
-				echo $OUTPUT->course_content_footer();
-				?>
-                </section>
-            </div>
-			<?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
-		</div>
-	</div>
-</div>
-
-<?php if (is_siteadmin()) { ?>
-<div class="hidden-blocks">
-    <div class="row-fluid">
-        <h4><?php echo get_string('visibleadminonly', 'theme_udcessential') ?></h4>
-            <?php
-                echo $OUTPUT->essentialblocks('hidden-dock');
-            ?>
+    <!-- Start Alerts -->
+    <!-- Alert #1 -->
+    <?php if ($hasalert1) { ?>  
+            <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <?php 
+            if ($PAGE->theme->settings->alert1type == 'info') {
+                    $alert1icon = $alertinfo;
+        } else if ($PAGE->theme->settings->alert1type == 'error') {
+            $alert1icon = $alertwarning;
+            } else {
+                    $alert1icon = $alertsuccess;
+            } 
+            echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->alert1title.'</span>'.$PAGE->theme->settings->alert1text; ?> 
     </div>
-</div>
-<?php } ?>
+    <?php } ?>
 
+    <!-- Alert #2 -->
+    <?php if ($hasalert2) { ?>  
+            <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <?php 
+            if ($PAGE->theme->settings->alert2type == 'info') {
+                    $alert2icon = $alertinfo;
+        } else if ($PAGE->theme->settings->alert2type == 'error') {
+            $alert2icon = $alertwarning;
+            } else {
+                    $alert2icon = $alertsuccess;
+            } 
+            echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->alert2title.'</span>'.$PAGE->theme->settings->alert2text; ?> 
+    </div>
+    <?php } ?>
+
+    <!-- Alert #3 -->
+    <?php if ($hasalert3) { ?>  
+        <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <?php 
+            if ($PAGE->theme->settings->alert3type == 'info') {
+                    $alert3icon = $alertinfo;
+        } else if ($PAGE->theme->settings->alert3type == 'error') {
+            $alert3icon = $alertwarning;
+            } else {
+                    $alert3icon = $alertsuccess;
+            } 
+            echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->alert3title.'</span>'.$PAGE->theme->settings->alert3text; ?> 
+        </div>
+    <?php } ?>
+    <!-- End Alerts -->
+
+    <div class="span8">
+    <!-- Start Slideshow -->
+    <?php 
+            if($PAGE->theme->settings->toggleslideshow==1) {
+                    require_once(dirname(__FILE__).'/includes/slideshow.php');
+            } else if($PAGE->theme->settings-> toggleslideshow==2 && !isloggedin()) {
+                    require_once(dirname(__FILE__).'/includes/slideshow.php');
+            } else if($PAGE->theme->settings-> toggleslideshow==3 && isloggedin()) {
+                    require_once(dirname(__FILE__).'/includes/slideshow.php');
+            } 
+    ?>
+    <!-- End Slideshow -->
+    </div>
+
+    <div style="margin-top: 50px;">
+    <!-- Start Marketing Spots -->
+    <?php 
+            if($PAGE->theme->settings->togglemarketing==1) {
+                    require_once(dirname(__FILE__).'/includes/marketingspots.php');
+            } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
+                    require_once(dirname(__FILE__).'/includes/marketingspots.php');
+            } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
+                    require_once(dirname(__FILE__).'/includes/marketingspots.php');
+            } 
+    ?>
+    <!-- End Marketing Spots -->
+    </div>    
+  </div>
+  <div class="row-fluid span12">
+  <hr>
+    <!-- Start Frontpage Content -->
+    <?php if($PAGE->theme->settings->usefrontcontent ==1) { 
+            echo $PAGE->theme->settings->frontcontentarea;
+            ?>
+            <div class="bor" style="margin-top: 10px;"></div>	
+    <?php }?>
+    <!-- End Frontpage Content -->
+    
+    <div id="page-content" class="row-fluid">
+        <div id="<?php echo $regionbsid ?>" class="span12">
+            <div class="row-fluid">
+                <div id="region-main-essential">
+                    <section id="region-main" class="span8 desktop-first-column">
+                        <?php
+                            echo $OUTPUT->course_content_header();
+                            echo $OUTPUT->main_content();
+                            echo $OUTPUT->course_content_footer();
+                        ?>
+                    </section>
+                </div>
+                <?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
+            </div>
+        </div>
+    </div>
+
+    <?php if (is_siteadmin()) { ?>
+    <div class="hidden-blocks">
+        <div class="row-fluid">
+            <h4><?php echo get_string('visibleadminonly', 'theme_udcessential') ?></h4>
+                <?php
+                    echo $OUTPUT->essentialblocks('hidden-dock');
+                ?>
+        </div>
+    </div>
+    <?php } ?>
+
+    </div>
+    
+</div>
+    
 <footer id="page-footer" class="container-fluid">
             <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
 </footer>
