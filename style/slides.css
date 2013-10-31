@@ -58,9 +58,11 @@
 }
 .da-slide h2{
 	color: #777;
-	font-size: 46px;
+	/*font-size: 46px;*/
+        font-size: 30px;
 	width: 50%;
-	top: 40px;
+	top: 5px;
+        /*top: 40px;*/
 	white-space: nowrap;
 	font-family: "PT Sans", Arial, Helvetica, sans-serif;
 	font-weight: 700;
@@ -81,7 +83,7 @@
 	text-align: center;
 	width: 30%;
 	top: 0px;
-	height: 230px;
+	height: 230px; /*230px*/
 	line-height: 320px;
 	left: 110%; /*60%*/
 }

@@ -37,7 +37,7 @@ $string['choosereadme'] = '
 <h3>About Udc Essential</h3>
 <p>Udc Essential es una copia del theme Essential (que usa de base el bootstrap-base.</p>
 <h3>Parents</h3>
-<p>Este theme esta basado en Bootstrap theme, el cual fué creado para Moodle 2.5, con ayuda de:<br>
+<p>Este theme esta basado en Bootstrap theme, el cual fuï¿½ creado para Moodle 2.5, con ayuda de:<br>
 Stuart Lamour, Mark Aberdour, Paul Hibbitts, Mary Evans.</p>
 <h3>Creditos del Theme</h3>
 <p>Authors: Julian Ridden<br>

@@ -17,7 +17,7 @@
             <?php } ?>
         </div>
     <?php } ?>
-    
+             
 
     <?php if ($hasslide2) { ?>
         <div class="da-slide">

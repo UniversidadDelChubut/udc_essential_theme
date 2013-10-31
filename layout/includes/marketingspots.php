@@ -1,17 +1,31 @@
+
 <div class="row-fluid" id="middle-blocks">
-    <div class="span4">
-        <!-- Advert #1 -->
-        <div class="service">
-            <!-- Icon & title. Font Awesome icon used. -->
-            <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing1icon ?>"></i> <?php echo $PAGE->theme->settings->marketing1 ?></span></h5>
-            <?php if ($hasmarketing1image) { ?>
-            	<div class="marketing-image1"></div>
-            <?php } ?>
-            
-            <?php echo $PAGE->theme->settings->marketing1content ?>
-            <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
+    <?php 
+        $cant = 0;
+        $spot1 = false;$spot2 = false;$spot3 = false;
+        if ($PAGE->theme->settings->marketing3 != ""){
+            $spot3 = true;
+        }elseif ($PAGE->theme->settings->marketing2 != ""){
+            $spot2 = true;
+        }elseif ($PAGE->theme->settings->marketing1 != ""){
+            $spot1 = true;
+        }
+        ?>
+    <?php if($spot1 || $spot2 || $spot3){ ?>
+        <div class="span4">
+            <!-- Advert #1 -->
+            <div class="service">
+                    <!-- Icon & title. Font Awesome icon used. -->
+                    <h5><span><i class="icon-<?php echo $PAGE->theme->settings->marketing1icon ?>"></i> <?php echo $PAGE->theme->settings->marketing1 ?></span></h5>
+                    <?php if ($hasmarketing1image) { ?>
+                        <div class="marketing-image1"></div>
+                    <?php } ?>
+
+                    <?php echo $PAGE->theme->settings->marketing1content ?>
+                    <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
+            </div>
         </div>
-    </div>
+    <?php }?>
     <?php /* 
     <div class="span4">
         <!-- Advert #2 -->

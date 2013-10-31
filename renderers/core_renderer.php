@@ -26,7 +26,7 @@
  
  class theme_udcessential_core_renderer extends theme_bootstrapbase_core_renderer {
  	
- 	/*
+    /*
      * This renders a notification message.
      * Uses bootstrap compatible html.
      */
