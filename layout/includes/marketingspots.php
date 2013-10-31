@@ -22,7 +22,7 @@
                     <?php } ?>
 
                     <?php echo $PAGE->theme->settings->marketing1content ?>
-                    <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
+                    <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button" target="_blank"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
             </div>
         </div>
     <?php }?>
