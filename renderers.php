@@ -19,6 +19,8 @@
  *
  * @package    theme
  * @subpackage Udcudcessential
+ * @author     Equipo de Desarrollo EVEA Universidad del Chubut
+ * @author     Basado en el tema "essential" desarrollado por:
  * @author     Julian (@moodleman) Ridden
  * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
