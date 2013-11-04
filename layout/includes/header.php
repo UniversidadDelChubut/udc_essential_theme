@@ -86,26 +86,12 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 
             <?php
             } else { ?>
-                
                 <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
             <?php
             } ?>
         </div>
-        <?php if (isloggedin() && $hasheaderprofilepic) { ?>
-        <div class="span1 pull-right" id="profilepic">
-            <p id="socialheading"><?php echo $USER->firstname; ?></p>
-            <ul class="socials unstyled">
-                <li>
-                    <a href="<?php echo $CFG->wwwroot.'/user/profile.php?id='.$USER->id; ?>">
-                        <?php echo $OUTPUT->user_picture($USER); ?>
-                    </a>
-                </li>
-            </ul>            
-
-        </div>
-        <?php
-        }
-
+        
+         <?php
         // If true, displays the heading and available social links; displays nothing if false.
         if ($hassocialnetworks) {
         ?>

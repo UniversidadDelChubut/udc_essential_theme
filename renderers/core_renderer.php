@@ -256,7 +256,7 @@
      * @return string HTML fragment.
      */
     public function login_info($withlinks = null) {
-        global $USER, $CFG, $DB, $SESSION;
+        global $USER, $OUTPUT, $CFG, $DB, $SESSION;
         
         if (during_initial_install()) {
             return '';
@@ -321,15 +321,26 @@
                     $loggedinas .= '('.html_writer::tag('a', get_string('switchrolereturn'), array('href'=>$url)).')';
                 }
             } else {
-                $loggedinas = $realuserinfo.get_string('loggedinas', 'moodle', $username);
+                //aca iria el desplegable cuando el usuario esta logueado
+                //no me interesa ver el texto
+                $loggedinas = "";//$realuserinfo.get_string('loggedinas', 'moodle', $username);
+                $userpic = new user_picture($USER);
+                // armo la imagen a mano
+                $userpic->link = false;
+                $picture = $OUTPUT->render($userpic);
+                
                 if ($withlinks) {
-                    $loggedinas .= " <a href=\"$CFG->wwwroot/login/logout.php?sesskey=".sesskey()."\">".get_string('logout').'</a>';
+                    $loggedinas .= " <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">".$picture.'</a>'.$this->getDropdownPerfil();
+                } else {
+                    $loggedinas .= $picture;
                 }
+                
             }
         } else {
             $loggedinas = get_string('loggedinnot', 'moodle');
             if (!$loginpage && $withlinks) {
-                $loggedinas .= " <a href=\"$loginurl\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">".get_string('login')."</a>".$this->getFormLogin();
+                //acá es donde realmente modifico para que aparezca el login form como dropdown
+                $loggedinas .= " <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">".get_string('login')."</a>".$this->getFormLogin();
             }
         }
 
@@ -368,6 +379,16 @@
         ob_get_clean();
         
         return $res;
+    }
+    
+    public function getDropdownPerfil()
+    {
+        global $CFG, $USER, $OUTPUT;
+        ob_start();
+        require(dirname(__FILE__).'/../login/perfil.html');
+        $res = ob_get_contents();
+        ob_get_clean();
         
+        return $res;
     }
 }
