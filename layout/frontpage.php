@@ -238,17 +238,19 @@ echo $OUTPUT->doctype() ?>
     <!-- End Slideshow -->
     </div>
 
-    <div style="margin-top: 50px;">
+    <div class="span4">
     <!-- Start Marketing Spots -->
-    <?php 
-            if($PAGE->theme->settings->togglemarketing==1) {
-                    require_once(dirname(__FILE__).'/includes/marketingspots.php');
-            } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
-                    require_once(dirname(__FILE__).'/includes/marketingspots.php');
-            } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
-                    require_once(dirname(__FILE__).'/includes/marketingspots.php');
-            } 
-    ?>
+        <div>
+            <?php 
+                    if($PAGE->theme->settings->togglemarketing==1) {
+                            require_once(dirname(__FILE__).'/includes/marketingspots.php');
+                    } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
+                            require_once(dirname(__FILE__).'/includes/marketingspots.php');
+                    } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
+                            require_once(dirname(__FILE__).'/includes/marketingspots.php');
+                    } 
+            ?>
+        </div>
     <!-- End Marketing Spots -->
     </div>    
   </div>
