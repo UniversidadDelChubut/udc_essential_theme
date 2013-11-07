@@ -239,9 +239,9 @@ echo $OUTPUT->doctype() ?>
     </div>
 
     <div class="span4">
-    <!-- Start Marketing Spots -->
-        <div>
-            <?php 
+    <!-- Start Marketing Spots 
+        <div>-->
+            <?php    
                     if($PAGE->theme->settings->togglemarketing==1) {
                             require_once(dirname(__FILE__).'/includes/marketingspots.php');
                     } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
@@ -250,8 +250,8 @@ echo $OUTPUT->doctype() ?>
                             require_once(dirname(__FILE__).'/includes/marketingspots.php');
                     } 
             ?>
-        </div>
-    <!-- End Marketing Spots -->
+        <!--</div>
+     End Marketing Spots -->
     </div>    
   </div>
   <div class="row-fluid span12">
