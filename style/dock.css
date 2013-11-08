@@ -98,10 +98,10 @@ body.has_dock div#dock{
 	top:0;
 	left:0;
 	z-index:11000;
-	width:36px;
+	width: 46px;/*36px;*/
 	height:100%;
-	background: [[setting:themecolor]];
-	border-right:0 none
+	background: white; /*[[setting:themecolor]];*/
+	border-right:0 none           
 }
 
 #dock .controls img {
@@ -116,7 +116,7 @@ body.has_dock div#dock{
 }
 
 #dock .dockeditem .firstdockitem{
-	margin-top:1em
+	margin-top:1em;
 }
 
 #dock .dockedtitle{
@@ -126,17 +126,22 @@ body.has_dock div#dock{
 	text-align:center;
 	vertical-align:middle;
 	cursor:pointer;
-	background-color: [[setting:themecolor]];
+	background-color: #157efd/*[[setting:themecolor]]*/;
 	border-bottom: 1px dashed #fff;
+        border-radius: 10px;
+        text-shadow: none;
+        border: #0a4081 solid 1px;
 }
 
 #dock .dockedtitle h2{
 	font-size:1em !important;
-	font-weight:normal;
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
 	line-height:100%;
-	color:#fff;
+        
+	color:white;
 	text-align:center;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 #dock .dockedtitle:hover,#dock .dockedtitle:focus,#dock .dockedtitle:active,#dock .dockedtitle.active,#dock .dockedtitle.disabled,#dock .dockedtitle[disabled]{

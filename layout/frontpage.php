@@ -276,12 +276,14 @@ echo $OUTPUT->doctype() ?>
                         ?>
                     </section>
                 </div>
-                <?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
+                <div >
+                    <?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
+                </div>
             </div>
         </div>
     </div>
 
-    <?php if (is_siteadmin()) { ?>
+    <?php /*if (is_siteadmin()) { ?>
     <div class="hidden-blocks">
         <div class="row-fluid">
             <h4><?php echo get_string('visibleadminonly', 'theme_udcessential') ?></h4>
@@ -291,6 +293,7 @@ echo $OUTPUT->doctype() ?>
         </div>
     </div>
     <?php } ?>
+    */?>
 
     </div>
     

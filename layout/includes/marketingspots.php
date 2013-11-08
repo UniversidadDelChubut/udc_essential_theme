@@ -96,7 +96,7 @@
             <!-- Carousel items -->
             <div class="carousel-inner">
                 <?php if($spot1):?>
-                    <div class="active item da-slide">
+                    <div class="active item">
                         <h2><?php echo $PAGE->theme->settings->marketing1 ?></h2>
                         <div class="marketing-image1"></div>
                         <?php echo $PAGE->theme->settings->marketing1content ?>
