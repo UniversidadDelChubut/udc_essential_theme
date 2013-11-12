@@ -97,44 +97,51 @@
             <div class="carousel-inner">
                 <?php if($spot1):?>
                     <div class="active item">
-                        <h2><?php echo $PAGE->theme->settings->marketing1 ?></h2>
+                        <div><h3 style="color: black;" align="center"><?php echo $PAGE->theme->settings->marketing1 ?></h3></div>
                         <div class="marketing-image1"></div>
-                        <?php echo $PAGE->theme->settings->marketing1content ?>
-                        <p>
+                        <br>
+                        <div><?php echo $PAGE->theme->settings->marketing1content ?></div>
+                        <div align="right"><p>
                             <a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" 
                             id="button" target="_blank"><?php echo $PAGE->theme->settings->marketing1buttontext?></a>
-                        </p>
+                        </p></div>
                     </div>
                 <?php endif;?>
                 <?php if($spot2):?>
-                    <div class="<?php if(!($spot1)){ echo "active ";}?>item">
-                        <p><?php echo $PAGE->theme->settings->marketing2 ?></p>
+                    <div class="<?php if(!($spot1)){ echo "active ";}?>item da-slide2">
+                        <div><h3 style="color: black;" align="center"><?php echo $PAGE->theme->settings->marketing2 ?></h3>
                         <div class="marketing-image2"></div>
-                        <?php echo $PAGE->theme->settings->marketing2content ?>
-                        <p align="right">
+                        <br>
+                        <div><p><?php echo $PAGE->theme->settings->marketing2content ?></p></div>
+                        <div align="right"><p>
                             <a href="<?php echo $PAGE->theme->settings->marketing2buttonurl ?>" 
                             id="button" target="_blank"><?php echo $PAGE->theme->settings->marketing2buttontext?></a>
-                        </p>
+                        </p></div>
                     </div>
                 <?php endif;?>
                 <?php if($spot3):?>
-                    <div class="<?php if(!($spot1) && !($spot2)){ echo "active ";}?>item">
-                        <h3><strong><?php echo $PAGE->theme->settings->marketing3 ?></strong></h3>
-                        <div class="imgDiv">
-                            <div class="marketing-image3"></div>
-                        </div>
-                        <h5><?php echo $PAGE->theme->settings->marketing3content ?></h5>
-                        <p align="right">
+                    <div class="<?php if(!($spot1) && !($spot2)){ echo "active ";}?>item da-slide2">
+                        <div><h3 style="color: black;" align="center"><?php echo $PAGE->theme->settings->marketing3 ?></h3></div>
+                        <div class="marketing-image3"></div>
+                        <br>
+                        <div><?php echo $PAGE->theme->settings->marketing3content ?></div>
+                        <div align="right"><p>
                             <a href="<?php echo $PAGE->theme->settings->marketing3buttonurl ?>" 
                             id="button" target="_blank"><?php echo $PAGE->theme->settings->marketing3buttontext?></a>
-                        </p>
+                        </p></div>
                     </div>
                 <?php endif;?>
             </div>
             <?php if($cant > 1): ?>
-                <!-- Carousel nav -->                                
+                <!-- Carousel nav -->
+                <nav class="da-arrows">
+                    <span class="da-arrows-prev" href="#carouselSpot" data-slide="prev"></span>
+                    <span class="da-arrows-next" href="#carouselSpot" data-slide="next"></span>
+                </nav>
+                <!--
                 <a class="carousel-control left" href="#carouselSpot" data-slide="prev">&lsaquo;</a>
                 <a class="carousel-control right" href="#carouselSpot" data-slide="next">&rsaquo;</a>
+                -->
             <?php endif;?>
         </div>
     </div>

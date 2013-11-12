@@ -61,7 +61,7 @@
                 <a href="<?php echo $slide4url ?>" class="da-link" target="_blank"><?php echo get_string('readmore','theme_udcessential')?></a>
             <?php } ?>
             <?php if ($hasslide4image) { ?>
-            <div class="da-img"><img src="<?php echo $slide4image ?>" alt="<?php echo $slide4 ?>"></div>
+                <div class="da-img"><img src="<?php echo $slide4image ?>" alt="<?php echo $slide4 ?>"></div>
             <?php } ?>
         </div>
     <?php } ?>
