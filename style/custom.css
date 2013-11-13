@@ -1849,7 +1849,7 @@ body,
 /**
  * mas estilos by UDC
  */
-.logininfo div#login_dropdown {padding: 15px; padding-bottom: 0px; color: gray !important;}
+.logininfo div#login_dropdown {padding: 15px !important; padding-bottom: 0px; color: gray !important;}
 .logininfo a.forgot-password:hover {text-decoration: underline !important;}
 
 /**

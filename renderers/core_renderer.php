@@ -338,10 +338,10 @@
                 
             }
         } else {
-            $loggedinas = get_string('loggedinnot', 'moodle');
+            //$loggedinas = get_string('loggedinnot', 'moodle');
             if (!$loginpage && $withlinks) {
                 //acá es donde realmente modifico para que aparezca el login form como dropdown
-                $loggedinas .= " <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">".get_string('login')."</a>".$this->getFormLogin();
+                $loggedinas = " <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Acceder <b class='caret'></b></a>".$this->getFormLogin();
             }
         }
 
