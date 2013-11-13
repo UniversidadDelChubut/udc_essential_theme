@@ -162,8 +162,9 @@ echo $OUTPUT->doctype() ?>
                 echo $custommenu;
             } ?>
             <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-            <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+                <li class="dropdown">
+                    <?php echo $OUTPUT->login_info() ?>
+                </li>
             </ul>
             </div>
         </div>

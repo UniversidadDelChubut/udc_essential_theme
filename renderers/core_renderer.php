@@ -344,7 +344,7 @@
             }
         }
 
-        $loggedinas = '<div class="logininfo">'.$loggedinas.'</div>';
+        //$loggedinas = '<div class="logininfo">'.$loggedinas.'</div>';
 
         if (isset($SESSION->justloggedin)) {
             unset($SESSION->justloggedin);
