@@ -324,14 +324,10 @@
             } else {
                 //aca iria el desplegable cuando el usuario esta logueado
                 //no me interesa ver el texto
-                $loggedinas = "";//$realuserinfo.get_string('loggedinas', 'moodle', $username);
-                $userpic = new user_picture($USER);
-                // armo la imagen a mano
-                $userpic->link = false;
-                $picture = $OUTPUT->render($userpic);
+                $loggedinas = "";
                 
                 if ($withlinks) {
-                    $loggedinas .= " <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">".$picture.'</a>'.$this->getDropdownPerfil();
+                    $loggedinas .= " <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\"><i class='icon icon-user'></i> Mi perfil <b class='caret'></b></a>".$this->getDropdownPerfil();
                 } else {
                     $loggedinas .= $picture;
                 }
