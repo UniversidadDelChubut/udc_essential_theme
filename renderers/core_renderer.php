@@ -18,7 +18,7 @@
  * Essential theme with the underlying Bootstrap theme.
  *
  * @package    theme
- * @subpackage Essential
+ * @subpackage UdcEssential
  * @author     Julian (@moodleman) Ridden
  * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -214,6 +214,7 @@
         $classes = (array)$classes;
         $classes[] = 'block-region';
         $attributes = array(
+            //'id' => 'block-region-'.preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $region),
             'id' => 'block-region-'.preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $region),
             'class' => join(' ', $classes),
             'data-blockregion' => $region,

@@ -1,6 +1,11 @@
-
+<!--
+ *******************************************************************************
+   TODO LO ORIGINAL DEL THEME DE LOS SPOT ORIGINALES ESTA ARRIBA 
+ *******************************************************************************
+-->
+<!-- 
 <div class="row-fluid" id="middle-blocks">
-    <?php 
+    <?php/* 
         $cant = 0;
         $spot1 = false;$spot2 = false;$spot3 = false;
         if ($PAGE->theme->settings->marketing3 != ""){
@@ -25,7 +30,7 @@
                     <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button" target="_blank"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
             </div>
         </div>
-    <?php }?>
+    <?php }*/?>
     <?php /* 
     <div class="span4">
         <!-- Advert #2 -->
@@ -56,3 +61,96 @@
     </div>
     */ ?>
 </div>
+-->
+
+<!--  
+ *******************************************************************************
+   TERCER INTENTO POR HACER LOS SPOT EN FORMA DE SLIDE
+ *******************************************************************************
+-->
+
+<?php
+    $cant = 0;
+    $spot1 = false;$spot2 = false;$spot3 = false;
+    if ($PAGE->theme->settings->marketing1 != ""){
+        $spot1 = true;
+        $cant++;
+    }
+    if ($PAGE->theme->settings->marketing2 != ""){
+        $spot2 = true;
+        $cant++;
+    }
+    if ($PAGE->theme->settings->marketing3 != ""){
+        $spot3 = true;
+        $cant++;
+    }
+?>
+<?php if($cant > 0): ?>
+    <div id="contenedor" style ="display:block;" class="da-slider" style="background-position: 50% 0%;margin-top: 50px;">
+        <div id="carouselSpot" class="carousel slide">
+            <ol class="carousel-indicators">
+                <!--<li data-target="#carouselSpot" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselSpot" data-slide-to="1"></li>
+                <li data-target="#carouselSpot" data-slide-to="2"></li>-->
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <?php if($spot1):?>
+                    <div class="active item">
+                        <div><h3 style="color: black;" align="center"><?php echo $PAGE->theme->settings->marketing1 ?></h3></div>
+                        <div class="marketing-image1"></div>
+                        <br>
+                        <div><?php echo $PAGE->theme->settings->marketing1content ?></div>
+                        <div align="right"><p>
+                            <a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" 
+                            id="button" target="_blank"><?php echo $PAGE->theme->settings->marketing1buttontext?></a>
+                        </p></div>
+                    </div>
+                <?php endif;?>
+                <?php if($spot2):?>
+                    <div class="<?php if(!($spot1)){ echo "active ";}?>item da-slide2">
+                        <div><h3 style="color: black;" align="center"><?php echo $PAGE->theme->settings->marketing2 ?></h3>
+                        <div class="marketing-image2"></div>
+                        <br>
+                        <div><p><?php echo $PAGE->theme->settings->marketing2content ?></p></div>
+                        <div align="right"><p>
+                            <a href="<?php echo $PAGE->theme->settings->marketing2buttonurl ?>" 
+                            id="button" target="_blank"><?php echo $PAGE->theme->settings->marketing2buttontext?></a>
+                        </p></div>
+                    </div>
+                <?php endif;?>
+                <?php if($spot3):?>
+                    <div class="<?php if(!($spot1) && !($spot2)){ echo "active ";}?>item da-slide2">
+                        <div><h3 style="color: black;" align="center"><?php echo $PAGE->theme->settings->marketing3 ?></h3></div>
+                        <div class="marketing-image3"></div>
+                        <br>
+                        <div><?php echo $PAGE->theme->settings->marketing3content ?></div>
+                        <div align="right"><p>
+                            <a href="<?php echo $PAGE->theme->settings->marketing3buttonurl ?>" 
+                            id="button" target="_blank"><?php echo $PAGE->theme->settings->marketing3buttontext?></a>
+                        </p></div>
+                    </div>
+                <?php endif;?>
+            </div>
+            <?php if($cant > 1): ?>
+                <!-- Carousel nav -->
+                <nav class="da-arrows">
+                    <span class="da-arrows-prev" href="#carouselSpot" data-slide="prev"></span>
+                    <span class="da-arrows-next" href="#carouselSpot" data-slide="next"></span>
+                </nav>
+                <!--
+                <a class="carousel-control left" href="#carouselSpot" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#carouselSpot" data-slide="next">&rsaquo;</a>
+                -->
+            <?php endif;?>
+        </div>
+    </div>
+<?php endif;?>
+ 
+<script>
+    $(document).ready(function(){
+        $('.carousel').carousel({
+            interval: 3000
+        })
+    });
+</script>
