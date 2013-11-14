@@ -214,7 +214,6 @@
         $classes = (array)$classes;
         $classes[] = 'block-region';
         $attributes = array(
-            //'id' => 'block-region-'.preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $region),
             'id' => 'block-region-'.preg_replace('#[^a-zA-Z0-9_\-]+#', '-', $region),
             'class' => join(' ', $classes),
             'data-blockregion' => $region,

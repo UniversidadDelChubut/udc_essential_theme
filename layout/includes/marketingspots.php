@@ -108,8 +108,8 @@
                     </div>
                 <?php endif;?>
                 <?php if($spot2):?>
-                    <div class="<?php if(!($spot1)){ echo "active ";}?>item da-slide2">
-                        <div><h3 style="color: black;" align="center"><?php echo $PAGE->theme->settings->marketing2 ?></h3>
+                    <div class="<?php if(!($spot1)){ echo "active ";}?> item">
+                        <div><h3 style="color: black;" align="center"><?php echo $PAGE->theme->settings->marketing2 ?></h3></div>
                         <div class="marketing-image2"></div>
                         <br>
                         <div><p><?php echo $PAGE->theme->settings->marketing2content ?></p></div>
@@ -120,7 +120,7 @@
                     </div>
                 <?php endif;?>
                 <?php if($spot3):?>
-                    <div class="<?php if(!($spot1) && !($spot2)){ echo "active ";}?>item da-slide2">
+                    <div class="<?php if(!($spot1) && !($spot2)){ echo "active ";}?> item">
                         <div><h3 style="color: black;" align="center"><?php echo $PAGE->theme->settings->marketing3 ?></h3></div>
                         <div class="marketing-image3"></div>
                         <br>

@@ -132,6 +132,7 @@ $THEME->layouts = array(
 );
 
 $THEME->javascripts = array(
+    'dockmod'
 );
 
 $THEME->javascripts_footer = array(
@@ -152,3 +153,5 @@ if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {
 }
 
 $THEME->enable_dock = true;
+
+?>
