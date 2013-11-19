@@ -108,76 +108,76 @@ echo $OUTPUT->doctype() ?>
     </nav>
 </header>
 
-<!-- Start Main Regions -->
-<div id="page" class="container-fluid">
-	<div id="page-content" class="row-fluid">
-        <div id="<?php echo $regionbsid ?>" class="<?php echo $regionclass; ?>">
-            <div class="row-fluid">
-                <?php if ($hasboringlayout) { ?>
-                	<div id="region-main-essential" class="<?php echo $contentclass; ?> pull-right">
-                <?php } else { ?>
-                	<div id="region-main-essential" class="<?php echo $contentclass; ?>">
-                <?php } ?>
-                    <section id="region-main" class="row-fluid">
-                    	<div id="page-navbar" class="clearfix">
-            				<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-            				<div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-        				</div>
-                        <?php
-                        echo $OUTPUT->course_content_header();
-                        echo $OUTPUT->main_content();
-                        echo $OUTPUT->course_content_footer();
-                        ?>
-                    </section>
+    <!-- Start Main Regions -->
+    <div id="page" class="container-fluid">
+        <div id="page-content" class="row-fluid">
+            <div id="<?php echo $regionbsid ?>" class="<?php echo $regionclass; ?>">
+                <div class="row-fluid">
+                    <?php if ($hasboringlayout) { ?>
+                        <div id="region-main-essential" class="<?php echo $contentclass; ?> pull-right">
+                    <?php } else { ?>
+                        <div id="region-main-essential" class="<?php echo $contentclass; ?>">
+                    <?php } ?>
+                            <section id="region-main" class="row-fluid">
+                                <div id="page-navbar" class="clearfix">
+                                                <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
+                                                <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+                                                </div>
+                                <?php
+                                echo $OUTPUT->course_content_header();
+                                echo $OUTPUT->main_content();
+                                echo $OUTPUT->course_content_footer();
+                                ?>
+                            </section>
+                        </div>
+                    <?php 
+                    if ($hasboringlayout) {
+                        echo $OUTPUT->essentialblocks($pre, $blockclass.' desktop-first-column');                        
+                    } else {
+                        echo $OUTPUT->essentialblocks($pre, $blockclass.' pull-right');
+                    }
+                    ?>
                 </div>
-                <?php 
-                if ($hasboringlayout) {
-					echo $OUTPUT->essentialblocks($pre, $blockclass.' desktop-first-column'); 
-				} else {
-					echo $OUTPUT->essentialblocks($pre, $blockclass.' pull-right');
-				}
-				?>
             </div>
+            <?php echo $OUTPUT->essentialblocks($post, 'span3'); ?>
         </div>
-        <?php echo $OUTPUT->essentialblocks($post, 'span3'); ?>
     </div>
-</div>
-<!-- End Main Regions --> 
+    <!-- End Main Regions --> 
  
-<a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_udcessential'); ?></p></a>
+    <a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_udcessential'); ?></p></a>
 
-<footer id="page-footer" class="container-fluid">
-            <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
-</footer>
+    <footer id="page-footer" class="container-fluid">
+         <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
+    </footer>
 
-<?php echo $OUTPUT->standard_footer_html(); ?>
+    <?php echo $OUTPUT->standard_footer_html(); ?>
 
-<?php echo $OUTPUT->standard_end_of_body_html() ?>
+    <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
-<!-- Start Google Analytics -->
-<?php if ($hasanalytics) { ?>
-	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
-<?php } ?>
-<!-- End Google Analytics -->
+    <!-- Start Google Analytics -->
+    <?php if ($hasanalytics) { ?>
+            <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
+    <?php } ?>
+    <!-- End Google Analytics -->
 
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-        }
-    });
-    
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-});
-</script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            var offset = 220;
+            var duration = 500;
+            jQuery(window).scroll(function() {
+                if (jQuery(this).scrollTop() > offset) {
+                    jQuery('.back-to-top').fadeIn(duration);
+                } else {
+                    jQuery('.back-to-top').fadeOut(duration);
+                }
+            });
+
+            jQuery('.back-to-top').click(function(event) {
+                event.preventDefault();
+                jQuery('html, body').animate({scrollTop: 0}, duration);
+                return false;
+            })
+        });
+    </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 function customise_dock_for_theme() {
-  var dock = M.core_dock;
+  var dock = M.core_dock;  
 
   dock.on('dock:itemschanged', theme_dockmod_handle_spans);
   dock.on('dock:panelgenerated', theme_dockmod_blockstyle);
@@ -42,10 +42,11 @@ function theme_dockmod_handle_spans() {
   }
 
 
+  var prehasblocks = (regionpre.all('.block').size() > 0);
 
   if (body.hasClass('two-column')) {
 
-    var prehasblocks = (regionpre.all('.block').size() > 0);
+    //var prehasblocks = (regionpre.all('.block').size() > 0);
     if (prehasblocks) {
       regionpre.addClass('span3');
       maincontent.removeClass('span12');
@@ -57,7 +58,7 @@ function theme_dockmod_handle_spans() {
     }
   } else {
 
-    var prehasblocks = (regionpre.all('.block').size() > 0);
+    //var prehasblocks = (regionpre.all('.block').size() > 0);
     if (prehasblocks) {
       regionpre.addClass('span4');
       maincontent.removeClass('span12');

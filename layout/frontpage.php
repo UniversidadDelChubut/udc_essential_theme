@@ -26,6 +26,13 @@
 
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
 
+/*if(){
+    echo "<br> TRUE <br>";
+}else{
+    echo "<br> FALSE <br>";
+}*/
+    
+
 $hasslide1 = (!empty($PAGE->theme->settings->slide1));
 $hasslide1image = (!empty($PAGE->theme->settings->slide1image));
 $hasslide1caption = (!empty($PAGE->theme->settings->slide1caption));
@@ -148,24 +155,25 @@ echo $OUTPUT->doctype() ?>
 
 <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
-<header role="banner" class="navbar">
-    <nav role="navigation" class="navbar-inner">
-        <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-            <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <div class="nav-collapse collapse">
-            <?php if ($hascustommenu) {
-                echo $custommenu;
-            } ?>
-            <ul class="nav pull-right">
-                <li class="dropdown">
-                    <?php echo $OUTPUT->login_info() ?>
-                </li>
-            </ul>
+    <header role="banner" class="navbar">
+        <nav role="navigation" class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+                <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="nav-collapse collapse">
+                <?php if ($hascustommenu) {
+                    echo $custommenu;
+                } ?>
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <?php echo $OUTPUT->login_info() ?>
+                    </li>
+                </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -264,7 +272,7 @@ echo $OUTPUT->doctype() ?>
             <div id="page-content" class="row-fluid">
                 <div id="<?php echo $regionbsid ?>" class="span12">
                     <div class="row-fluid">
-                        <div id="region-main-essential">
+                        <div id="region-main-udcessential">                            
                             <section id="region-main" class="span8 desktop-first-column">
                                 <?php
                                     echo $OUTPUT->course_content_header();
@@ -292,7 +300,7 @@ echo $OUTPUT->doctype() ?>
             <?php } ?>
             */?>
 
-            </div>
+        </div>
     </div>
 
     <footer id="page-footer" class="container-fluid">

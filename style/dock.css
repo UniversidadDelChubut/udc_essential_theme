@@ -86,7 +86,9 @@
 }
 
 body.has_dock{
-	margin-left:40px
+	margin-left:45px;  /* 40px */
+        visibility: visible;
+        position: relative;
 }
 
 body.has_dock div#dock{
@@ -94,14 +96,14 @@ body.has_dock div#dock{
 }
 
 #dock{
-	position:fixed;
+	position: fixed;
 	top:0;
 	left:0;
 	z-index:11000;
 	width: 46px;/*36px;*/
 	height:100%;
-	background: white; /*[[setting:themecolor]];*/
-	border-right:0 none           
+	/*background: white; [[setting:themecolor]];*/
+	border-right:0 none;
 }
 
 #dock .controls img {
@@ -110,9 +112,9 @@ body.has_dock div#dock{
 	border-radius: 5px;
 }
 
-#dock .nothingdocked{
+#dock .nothingdocked {
 	display:none;
-	visibility:hidden
+	visibility:hidden;
 }
 
 #dock .dockeditem .firstdockitem{
