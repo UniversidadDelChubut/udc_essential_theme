@@ -157,4 +157,5 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
         <div id="course-header"><?php echo $courseheader; ?></div>
         <?php } ?>
     </div>
+  </div>
 </header>
