@@ -5,7 +5,7 @@
 -->
 <!-- 
 <div class="row-fluid" id="middle-blocks">
-    <?php/* 
+    <?php /* 
         $cant = 0;
         $spot1 = false;$spot2 = false;$spot3 = false;
         if ($PAGE->theme->settings->marketing3 != ""){
@@ -30,7 +30,7 @@
                     <p align="right"><a href="<?php echo $PAGE->theme->settings->marketing1buttonurl ?>" id="button" target="_blank"><?php echo $PAGE->theme->settings->marketing1buttontext ?></a></p>
             </div>
         </div>
-    <?php }*/?>
+    <?php } */ ?>
     <?php /* 
     <div class="span4">
         <!-- Advert #2 -->
