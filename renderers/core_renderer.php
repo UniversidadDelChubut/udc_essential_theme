@@ -258,6 +258,8 @@
     public function login_info($withlinks = null) {
         global $USER, $OUTPUT, $CFG, $DB, $SESSION;
         
+        $loggedinas = "";
+        
         if (during_initial_install()) {
             return '';
         }
