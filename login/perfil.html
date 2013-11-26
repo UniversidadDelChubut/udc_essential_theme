@@ -10,7 +10,7 @@
             $picture = $OUTPUT->render($userpic);
 
             echo $picture;
-        ?>
+            ?> &nbsp; &nbsp; &nbsp;<small><a href="<?php echo $CFG->wwwroot."/user/edit.php";?>">Editar</a></small>
         <h3><?php echo $fullname;?></h3>
         <a class="btn btn-info" href="<?php echo $CFG->wwwroot."/login/logout.php?sesskey=".sesskey();?>">Cerrar sesión</a>
     </div>
