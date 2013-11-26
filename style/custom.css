@@ -1851,6 +1851,7 @@ body,
  */
 .logininfo div#login_dropdown {padding: 15px !important; padding-bottom: 0px; color: gray !important;}
 .logininfo a.forgot-password:hover {text-decoration: underline !important;}
+#btn_course_links a i {color: white !important;}
 
 /**
  * editicons CSS
