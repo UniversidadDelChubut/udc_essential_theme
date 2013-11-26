@@ -149,7 +149,7 @@ echo $OUTPUT->doctype() ?>
     </noscript>
 </head>
 
-<body <?php echo $OUTPUT->body_attributes(); ?>>
+<body <?php echo $OUTPUT->body_attributes(); ?> >
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
@@ -165,22 +165,28 @@ echo $OUTPUT->doctype() ?>
                     <span class="icon-bar"></span>
                 </a>
                 <div class="nav-collapse collapse">
-                <?php if ($hascustommenu) {
-                    echo $custommenu;
-                } ?>
-                <ul class="nav pull-right">
-                    <li class="dropdown">
-                        <?php echo $OUTPUT->login_info() ?>
-                    </li>
-                </ul>
+                    <?php if ($hascustommenu) {
+                        echo $custommenu;
+                    } ?>
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <?php echo $OUTPUT->login_info() ?>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-    </header>
-
-    <div id="page" class="container-fluid"> 
-
-        <div class="row-fluid span12">
+    </header>                   
+    
+    <div id="page" class="container-fluid" <!--style="border: black 1px solid"-->>
+        
+        <div style="float: right; padding: 0;">
+            <div style="position: fixed; width: 50px; height: 150px; border: black 2px solid; border-top-left-radius: 30px; border-bottom-left-radius: 30px; background-color: #81DAF5;">
+                <a href="#"><img src="/moodle/theme/udcessential/pix/ayuda.png" ></a>
+            </div>
+        </div>
+        
+        <div class="row-fluid span12">                        
             <!-- Start Alerts -->
             <!-- Alert #1 -->
             <?php if ($hasalert1) { ?>  
@@ -231,6 +237,7 @@ echo $OUTPUT->doctype() ?>
             <!-- End Alerts -->
 
             <div class="span8">
+                
             <!-- Start Slideshow -->
             <?php 
                     if($PAGE->theme->settings->toggleslideshow==1) {
@@ -262,7 +269,7 @@ echo $OUTPUT->doctype() ?>
         </div>
         <div class="row-fluid span12">
 
-            <!-- Start Frontpage Content -->
+            <!-- Start Frontpage Content -->            
             <?php if($PAGE->theme->settings->usefrontcontent ==1) { 
                 echo $PAGE->theme->settings->frontcontentarea; ?>
                 <div class="bor" style="margin-top: 10px;"></div>	
