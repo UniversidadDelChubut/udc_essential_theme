@@ -90,14 +90,20 @@ echo $OUTPUT->doctype() ?>
 <header role="banner" class="navbar navbar-fixed-top">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"></i>&nbsp;<?php echo $COURSE->shortname; ?></a>
+            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"></i>&nbsp;UDC</a>
+            <a class="brand" href="#"><?php echo $COURSE->fullname; ?></a>
             <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-            <?php echo $OUTPUT->custom_menu(); ?>
+            <?php //echo $OUTPUT->custom_menu(); ?>
+              <div class="btn-group" id="btn_course_links">
+                <a href="<?php echo $CFG->wwwroot."/course/view.php?id=".$COURSE->id;?>" class="btn btn-info" title="Inicio del curso"><i class="icon-white icon-home"></i></a>
+                <a href="<?php echo $CFG->wwwroot."/calendar/view.php?view=upcoming&course=".$COURSE->id;?>" class="btn btn-info" title="Próximos eventos"><i class="icon-white icon-calendar"></i></a>
+                <a href="<?php echo $CFG->wwwroot."/message/index.php";?>" class="btn btn-info" title="Mensajes"><i class="icon-white icon-envelope"></i></a>
+              </div>
             <ul class="nav pull-right">
                 <li class="dropdown">
                     <?php echo $OUTPUT->login_info() ?>
