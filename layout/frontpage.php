@@ -178,7 +178,7 @@ echo $OUTPUT->doctype() ?>
         </nav>
     </header>                   
     
-    <div id="page" class="container-fluid" <!--style="border: black 1px solid"-->>
+    <div id="page" class="container-fluid"> <!--style="border: black 1px solid"-->
         
         <div style="float: right; padding: 0;">
             <div style="position: fixed; width: 50px; height: 150px; border: black 2px solid; border-top-left-radius: 30px; border-bottom-left-radius: 30px; background-color: #81DAF5;">
