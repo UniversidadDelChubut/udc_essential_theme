@@ -148,7 +148,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
 
-    <header role="banner" class="navbar">
+    <header role="banner" class="navbar" >
         <nav role="navigation" class="navbar-inner">
             <div class="container-fluid">
                 <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
@@ -169,19 +169,19 @@ echo $OUTPUT->doctype() ?>
                 </div>
             </div>
         </nav>
-    </header>                   
-        
-    <div id="page" class="container-fluid"> <!--style="border: black 1px solid"-->
+    </header>                           
+                
+    <div id="page" class="container-fluid" > <!--style="border: black 1px solid"> -->
         
         <!-- Inicio del boton derecho de AYUDA -->
         <div style="float: right; padding: 0;">
-            <div style="position: fixed; width: 30px; height: 100px; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background-color: #81DAF5;">
-                <a href="http://udc.edu.ar"><img src="/moodle/theme/udcessential/pix/ayuda.png" ></a>
+            <div style="position: fixed; width: 50px;">
+                <a href="http://udc.edu.ar"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt="Ayuda" ></a>
             </div>
         </div>
         <!-- Fin del boton derecho de AYUDA -->
         
-        <div class="row-fluid span12">
+        <div class="row-fluid">
             <!-- Start Alerts -->
             <!-- Alert #1 -->
             <?php if ($hasalert1) { ?>  
@@ -262,7 +262,7 @@ echo $OUTPUT->doctype() ?>
             End Marketing Spots -->
             </div>    
         </div>
-        <div class="row-fluid span12">
+        <div class="row-fluid">
 
             <!-- Start Frontpage Content -->            
             <?php if($PAGE->theme->settings->usefrontcontent ==1) { 
