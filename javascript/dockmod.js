@@ -24,7 +24,7 @@ function theme_dockmod_handle_spans() {
 
   var blockspre = 0;
   var blockspost = 0;
-
+    
   var maincontent = this.Y.one('#region-main');
   var regionpre = this.Y.one('#block-region-side-pre');
   var regionpost = this.Y.one('#block-region-side-post');

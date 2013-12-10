@@ -33,7 +33,7 @@ $THEME->name = 'udcessential';
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom', 'slides', 'lightbox', 'font-awesome', 'dock');
+$THEME->sheets = array('custom', 'slides', 'lightbox', 'font-awesome');
 $THEME->supportscssoptimisation = false;
 //$THEME->enable_dock = false;
 $THEME->yuicssmodules = array();
@@ -152,6 +152,6 @@ if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {
     $THEME->javascripts[] = 'html5shiv';
 }
 
-$THEME->enable_dock = true;
+//$THEME->enable_dock = true;
 
 ?>

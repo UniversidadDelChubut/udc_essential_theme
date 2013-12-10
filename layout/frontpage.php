@@ -25,14 +25,7 @@
  */
 
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
-
-/*if(){
-    echo "<br> TRUE <br>";
-}else{
-    echo "<br> FALSE <br>";
-}*/
     
-
 $hasslide1 = (!empty($PAGE->theme->settings->slide1));
 $hasslide1image = (!empty($PAGE->theme->settings->slide1image));
 $hasslide1caption = (!empty($PAGE->theme->settings->slide1caption));
@@ -177,16 +170,18 @@ echo $OUTPUT->doctype() ?>
             </div>
         </nav>
     </header>                   
-    
+        
     <div id="page" class="container-fluid"> <!--style="border: black 1px solid"-->
         
+        <!-- Inicio del boton derecho de AYUDA -->
         <div style="float: right; padding: 0;">
-            <div style="position: fixed; width: 50px; height: 150px; border: black 2px solid; border-top-left-radius: 30px; border-bottom-left-radius: 30px; background-color: #81DAF5;">
-                <a href="#"><img src="/moodle/theme/udcessential/pix/ayuda.png" ></a>
+            <div style="position: fixed; width: 30px; height: 100px; border-top-left-radius: 20px; border-bottom-left-radius: 20px; background-color: #81DAF5;">
+                <a href="http://udc.edu.ar"><img src="/moodle/theme/udcessential/pix/ayuda.png" ></a>
             </div>
         </div>
+        <!-- Fin del boton derecho de AYUDA -->
         
-        <div class="row-fluid span12">                        
+        <div class="row-fluid span12">
             <!-- Start Alerts -->
             <!-- Alert #1 -->
             <?php if ($hasalert1) { ?>  
