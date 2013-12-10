@@ -174,9 +174,9 @@ echo $OUTPUT->doctype() ?>
     <div id="page" class="container-fluid" > <!--style="border: black 1px solid"> -->
         
         <!-- Inicio del boton derecho de AYUDA -->
-        <div style="float: right; padding: 0;">
-            <div style="position: fixed; width: 50px;">
-                <a href="http://udc.edu.ar"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt="Ayuda" ></a>
+        <div style="float: right;">
+            <div style="position: fixed;">
+                <a href="http://udc.edu.ar" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt="Ayuda" width="50px" height="50px" style="padding-left: 20px" ></a>
             </div>
         </div>
         <!-- Fin del boton derecho de AYUDA -->
