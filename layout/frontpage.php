@@ -169,14 +169,14 @@ echo $OUTPUT->doctype() ?>
                 </div>
             </div>
         </nav>
-    </header>                           
-                
-    <div id="page" class="container-fluid" > <!--style="border: black 1px solid"> -->
-        
+    </header>
+
+    <div id="page" class="container-fluid"> <!--style="border: black 1px solid"> -->
+      
         <!-- Inicio del boton derecho de AYUDA -->
         <div style="float: right;">
             <div style="position: fixed;">
-                <a href="http://udc.edu.ar" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt="Ayuda" width="50px" height="50px" style="padding-left: 20px" ></a>
+                <a href="http://udc.edu.ar" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt="Ayuda" width="50px" height="50px" style="padding-left: 15%" ></a>
             </div>
         </div>
         <!-- Fin del boton derecho de AYUDA -->
