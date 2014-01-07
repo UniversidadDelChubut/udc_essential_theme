@@ -140,38 +140,77 @@ echo $OUTPUT->doctype() ?>
     <noscript>
 	<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/udcessential/style/nojs.css" />
     </noscript>
+    <!-- Inicio JavaScript y CSS para desaparecer el header del fronpage -->
+        <script>
+            $(function(){
+                $(window).scroll(function(){
+                    if ($(window).scrollTop() > 10 ){
+                        $("#caja-flotante").fadeOut();
+                    }else{
+                        $("#caja-flotante").fadeIn();
+                    }
+                });
+            });
+        </script>
+        <style>
+            #caja-flotante{
+                height: auto;
+                color: black;
+                right: 0;
+            }
+            #barra-fija{
+                /*height: 35px;
+                width: 100%;
+                color: white;*/
+                /*position: fixed;*/
+                top: 0;
+                right: 0;
+            }
+            #cabecera{
+                /*position: fixed;*/
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    <!-- Fin del JavaScript y CSS -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?> >
 
-<?php echo $OUTPUT->standard_top_of_body_html() ?>
+    <?php echo $OUTPUT->standard_top_of_body_html() ?>
+    
+    <div id="cabecera" role="banner" class="navbar navbar-fixed-top">
+        <div id="caja-flotante">
+            <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
+        </div>
+        <div id="barra-fija">
+            <header  >
+                <nav role="navigation" class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+                        <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <div class="nav-collapse collapse">
+                            <?php if ($hascustommenu) {
+                                echo $custommenu;
+                            } ?>
+                            <ul class="nav pull-right">
+                                <li class="dropdown">
+                                    <?php echo $OUTPUT->login_info() ?>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
 
-<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
-
-    <header role="banner" class="navbar" >
-        <nav role="navigation" class="navbar-inner">
-            <div class="container-fluid">
-                <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
-                <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                <div class="nav-collapse collapse">
-                    <?php if ($hascustommenu) {
-                        echo $custommenu;
-                    } ?>
-                    <ul class="nav pull-right">
-                        <li class="dropdown">
-                            <?php echo $OUTPUT->login_info() ?>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <div id="page" class="container-fluid"> <!--style="border: black 1px solid"> -->
+    <!-- Inicio del div que contiene la pagina principal -->
+    <div id="page" class="container-fluid" style="padding-top: 140px"> <!--style="border: black 1px solid"> -->
       
         <!-- Inicio del boton derecho de AYUDA -->
         <div style="float: right;">
@@ -181,6 +220,7 @@ echo $OUTPUT->doctype() ?>
         </div>
         <!-- Fin del boton derecho de AYUDA -->
         
+        <!-- Inicio del div que contiene las ALERTAS, SLIDES y SPOTS -->
         <div class="row-fluid">
             <!-- Start Alerts -->
             <!-- Alert #1 -->
@@ -262,6 +302,9 @@ echo $OUTPUT->doctype() ?>
             End Marketing Spots -->
             </div>    
         </div>
+        <!-- FIN del div que contiene las ALERTAS, SLIDES y SPOTS -->
+        
+        <!-- Inicio del div que contiene el contenido Principal -->
         <div class="row-fluid">
 
             <!-- Start Frontpage Content -->            
@@ -303,7 +346,9 @@ echo $OUTPUT->doctype() ?>
             */?>
 
         </div>
+        <!-- Fin del div que contiene el contenido Principal -->
     </div>
+    <!-- Fin del div que contiene la pagina principal -->
 
     <footer id="page-footer" class="container-fluid">
         <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
