@@ -144,7 +144,7 @@ echo $OUTPUT->doctype() ?>
         <script>
             $(function(){
                 $(window).scroll(function(){
-                    if ($(window).scrollTop() > 10 ){
+                    if ($(window).scrollTop() > 5 ){
                         $("#caja-flotante").fadeOut();
                     }else{
                         $("#caja-flotante").fadeIn();
@@ -155,19 +155,14 @@ echo $OUTPUT->doctype() ?>
         <style>
             #caja-flotante{
                 height: auto;
-                color: black;
                 right: 0;
             }
             #barra-fija{
-                /*height: 35px;
-                width: 100%;
-                color: white;*/
-                /*position: fixed;*/
                 top: 0;
                 right: 0;
             }
             #cabecera{
-                /*position: fixed;*/
+                padding-top: 40px;
                 width: 100%;
                 height: 100%;
             }
@@ -179,13 +174,13 @@ echo $OUTPUT->doctype() ?>
 
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
     
-    <div id="cabecera" role="banner" class="navbar navbar-fixed-top">
+    <div id="cabecera" class="row-fluid">
         <div id="caja-flotante">
             <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
         </div>
         <div id="barra-fija">
-            <header  >
-                <nav role="navigation" class="navbar-inner">
+            <header  role="banner" class="navbar" >
+                <nav role="navigation" class="navbar-inner navbar-fixed-top">
                     <div class="container-fluid">
                         <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
                         <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
@@ -210,8 +205,29 @@ echo $OUTPUT->doctype() ?>
     </div>
 
     <!-- Inicio del div que contiene la pagina principal -->
-    <div id="page" class="container-fluid" style="padding-top: 140px"> <!--style="border: black 1px solid"> -->
-      
+    <div id="page" class="container-fluid"> <!--style="border: black 1px solid"> -->
+        
+        <div class="alert alert-success" align="center" style="font-size: 12pt"><strong> 
+            Bienvenidos al portal universitario de la Universidad del Chubut</strong>
+        </div>
+        
+        <!-- INICIO verificacion de capability del usuario registrado -->
+        <?php 
+            //echo "<br>USUARIO_ID: ".$USER->id."<br>"; 
+            //$context = context_user::instance($user->id);
+            echo "UserID: ".$USER->id;
+            /*if(true){
+                echo "<br>Tiene capability<br>";
+              }elseif(false){
+                echo "<br>NOOO<br>";
+              }elseif(true){
+                echo "<br>NOOO<br>";
+              }else{
+                echo "<br>NOOO<br>";
+              }*/
+        ?>
+        <!-- FIN de verificacion de capability del usuario registrado -->
+        
         <!-- Inicio del boton derecho de AYUDA -->
         <div style="float: right;">
             <div style="position: fixed;">
@@ -222,85 +238,88 @@ echo $OUTPUT->doctype() ?>
         
         <!-- Inicio del div que contiene las ALERTAS, SLIDES y SPOTS -->
         <div class="row-fluid">
-            <!-- Start Alerts -->
-            <!-- Alert #1 -->
-            <?php if ($hasalert1) { ?>  
-                <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
-                    <a class="close" data-dismiss="alert" href="#">×</a>
-                    <?php if ($PAGE->theme->settings->alert1type == 'info') {
-                            $alert1icon = $alertinfo;
-                        } else if ($PAGE->theme->settings->alert1type == 'error') {
-                            $alert1icon = $alertwarning;
-                        } else {
-                            $alert1icon = $alertsuccess;
-                        } 
-                        echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->alert1title.'</span>'.$PAGE->theme->settings->alert1text; ?> 
-                </div>
-            <?php } ?>
-
-            <!-- Alert #2 -->
-            <?php if ($hasalert2) { ?>  
-                    <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
-                    <a class="close" data-dismiss="alert" href="#">×</a>
-                    <?php 
-                    if ($PAGE->theme->settings->alert2type == 'info') {
-                            $alert2icon = $alertinfo;
-                } else if ($PAGE->theme->settings->alert2type == 'error') {
-                    $alert2icon = $alertwarning;
-                    } else {
-                            $alert2icon = $alertsuccess;
-                    } 
-                    echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->alert2title.'</span>'.$PAGE->theme->settings->alert2text; ?> 
-            </div>
-            <?php } ?>
-
-            <!-- Alert #3 -->
-            <?php if ($hasalert3) { ?>  
-                <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
-                    <a class="close" data-dismiss="alert" href="#">×</a>
-                    <?php 
-                    if ($PAGE->theme->settings->alert3type == 'info') {
-                            $alert3icon = $alertinfo;
-                } else if ($PAGE->theme->settings->alert3type == 'error') {
-                    $alert3icon = $alertwarning;
-                    } else {
-                            $alert3icon = $alertsuccess;
-                    } 
-                    echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->alert3title.'</span>'.$PAGE->theme->settings->alert3text; ?> 
-                </div>
-            <?php } ?>
-            <!-- End Alerts -->
-
-            <div class="span8">
-                
-            <!-- Start Slideshow -->
-            <?php 
-                    if($PAGE->theme->settings->toggleslideshow==1) {
-                            require_once(dirname(__FILE__).'/includes/slideshow.php');
-                    } else if($PAGE->theme->settings-> toggleslideshow==2 && !isloggedin()) {
-                            require_once(dirname(__FILE__).'/includes/slideshow.php');
-                    } else if($PAGE->theme->settings-> toggleslideshow==3 && isloggedin()) {
-                            require_once(dirname(__FILE__).'/includes/slideshow.php');
-                    } 
-            ?>
-            <!-- End Slideshow -->
-            </div>
-
-            <div class="span4">
-            <!-- Start Marketing Spots 
-                <div>-->
-                    <?php    
-                            if($PAGE->theme->settings->togglemarketing==1) {
-                                    require_once(dirname(__FILE__).'/includes/marketingspots.php');
-                            } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
-                                    require_once(dirname(__FILE__).'/includes/marketingspots.php');
-                            } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
-                                    require_once(dirname(__FILE__).'/includes/marketingspots.php');
+            <div class="row fluid span12">
+                <!-- Start Alerts -->
+                <!-- Alert #1 -->
+                <?php if ($hasalert1) { ?>  
+                    <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
+                        <a class="close" data-dismiss="alert" href="#">×</a>
+                        <?php if ($PAGE->theme->settings->alert1type == 'info') {
+                                $alert1icon = $alertinfo;
+                            } else if ($PAGE->theme->settings->alert1type == 'error') {
+                                $alert1icon = $alertwarning;
+                            } else {
+                                $alert1icon = $alertsuccess;
                             } 
-                    ?>
-                <!--</div>
-            End Marketing Spots -->
-            </div>    
+                            echo $alert1icon.'<span class="title">'.$PAGE->theme->settings->alert1title.'</span>'.$PAGE->theme->settings->alert1text; ?> 
+                    </div>
+                <?php } ?>
+
+                <!-- Alert #2 -->
+                <?php if ($hasalert2) { ?>  
+                        <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert2type ?>">  
+                        <a class="close" data-dismiss="alert" href="#">×</a>
+                        <?php 
+                        if ($PAGE->theme->settings->alert2type == 'info') {
+                                $alert2icon = $alertinfo;
+                    } else if ($PAGE->theme->settings->alert2type == 'error') {
+                        $alert2icon = $alertwarning;
+                        } else {
+                                $alert2icon = $alertsuccess;
+                        } 
+                        echo $alert2icon.'<span class="title">'.$PAGE->theme->settings->alert2title.'</span>'.$PAGE->theme->settings->alert2text; ?> 
+                </div>
+                <?php } ?>
+
+                <!-- Alert #3 -->
+                <?php if ($hasalert3) { ?>  
+                    <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert3type ?>">  
+                        <a class="close" data-dismiss="alert" href="#">×</a>
+                        <?php 
+                        if ($PAGE->theme->settings->alert3type == 'info') {
+                                $alert3icon = $alertinfo;
+                    } else if ($PAGE->theme->settings->alert3type == 'error') {
+                        $alert3icon = $alertwarning;
+                        } else {
+                                $alert3icon = $alertsuccess;
+                        } 
+                        echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->alert3title.'</span>'.$PAGE->theme->settings->alert3text; ?> 
+                    </div>
+                <?php } ?>
+                <!-- End Alerts -->
+            </div>
+            <div class="row fluid">
+                <div class="span8">
+
+                <!-- Start Slideshow -->
+                <?php 
+                        if($PAGE->theme->settings->toggleslideshow==1) {
+                                require_once(dirname(__FILE__).'/includes/slideshow.php');
+                        } else if($PAGE->theme->settings-> toggleslideshow==2 && !isloggedin()) {
+                                require_once(dirname(__FILE__).'/includes/slideshow.php');
+                        } else if($PAGE->theme->settings-> toggleslideshow==3 && isloggedin()) {
+                                require_once(dirname(__FILE__).'/includes/slideshow.php');
+                        } 
+                ?>
+                <!-- End Slideshow -->
+                </div>
+
+                <div class="span4">
+                <!-- Start Marketing Spots 
+                    <div>-->
+                        <?php    
+                                if($PAGE->theme->settings->togglemarketing==1) {
+                                        require_once(dirname(__FILE__).'/includes/marketingspots.php');
+                                } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
+                                        require_once(dirname(__FILE__).'/includes/marketingspots.php');
+                                } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
+                                        require_once(dirname(__FILE__).'/includes/marketingspots.php');
+                                } 
+                        ?>
+                    <!--</div>
+                End Marketing Spots -->
+                </div>
+            </div>
         </div>
         <!-- FIN del div que contiene las ALERTAS, SLIDES y SPOTS -->
         
