@@ -24,6 +24,9 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+//instancio las variables globales
+global $USER, $SESSION; 
+
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
     
 $hasslide1 = (!empty($PAGE->theme->settings->slide1));
@@ -140,34 +143,10 @@ echo $OUTPUT->doctype() ?>
     <noscript>
 	<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/udcessential/style/nojs.css" />
     </noscript>
-    <!-- Inicio JavaScript y CSS para desaparecer el header del fronpage -->
-        <script>
-            $(function(){
-                $(window).scroll(function(){
-                    if ($(window).scrollTop() > 5 ){
-                        $("#caja-flotante").fadeOut();
-                    }else{
-                        $("#caja-flotante").fadeIn();
-                    }
-                });
-            });
-        </script>
-        <style>
-            #caja-flotante{
-                height: auto;
-                right: 0;
-            }
-            #barra-fija{
-                top: 0;
-                right: 0;
-            }
-            #cabecera{
-                padding-top: 40px;
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-    <!-- Fin del JavaScript y CSS -->
+    <!-- agrego el Javascript y los CSS agregados -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/udcessential/style/css_agregadas.css" />
+    <script type="text/javascript" src="<?php echo $CFG->wwwroot;?>/theme/udcessential/javascript/funciones_agregadas.js"></script>
+    <!-- fin de agregar archivos -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?> >
@@ -192,11 +171,16 @@ echo $OUTPUT->doctype() ?>
                             <?php if ($hascustommenu) {
                                 echo $custommenu;
                             } ?>
+                            <!-- Botones personalizados del Usuario -->
+                                <?php //include 'includes/botones_usuario.php'?>
+                            <!-- Fin de los botones personalizados del Usuario -->
+                            <!-- Inicio info del login del usuario -->
                             <ul class="nav pull-right">
                                 <li class="dropdown">
                                     <?php echo $OUTPUT->login_info() ?>
                                 </li>
                             </ul>
+                            <!-- Fin info del login del usuario -->
                         </div>
                     </div>
                 </nav>

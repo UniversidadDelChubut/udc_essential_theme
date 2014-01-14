@@ -80,6 +80,10 @@ echo $OUTPUT->doctype() ?>
     <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
+    <!-- agrego el Javascript y los CSS agregados -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/udcessential/style/css_agregadas.css" />
+    <script type="text/javascript" src="<?php echo $CFG->wwwroot;?>/theme/udcessential/javascript/funciones_agregadas.js"></script>
+    <!-- fin de agregar archivos -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
@@ -98,13 +102,18 @@ echo $OUTPUT->doctype() ?>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-            <?php echo $OUTPUT->custom_menu(); ?>
-            <ul class="nav pull-right">
-                <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                <li class="dropdown">
-                    <?php echo $OUTPUT->login_info() ?>
-                </li>
-            </ul>
+                <?php echo $OUTPUT->custom_menu(); ?>
+                <!-- Botones personalizados del Usuario -->
+                    <?php //include 'includes/botones_usuario.php'?>
+                <!-- Fin de los botones personalizados del Usuario -->
+                <!-- Inicio info del login del usuario -->
+                    <ul class="nav pull-right">
+                        <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+                        <li class="dropdown">
+                            <?php echo $OUTPUT->login_info() ?>
+                        </li>
+                    </ul>
+                <!-- Fin info del login del usuario -->
             </div>
         </div>
     </nav>

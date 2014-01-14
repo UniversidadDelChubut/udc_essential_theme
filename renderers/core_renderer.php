@@ -99,16 +99,17 @@
         if (isloggedin() && $hasdisplaymycourses) {
         	$mycoursetitle = $this->page->theme->settings->mycoursetitle;
             if ($mycoursetitle == 'module') {
-				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mymodules', 'theme_udcessential');
+				//$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mymodules', 'theme_udcessential');
+                                $branchlabel = '<i class="icon-book"></i>'.get_string('mymodules', 'theme_udcessential');
 				$branchtitle = get_string('mymodules', 'theme_udcessential');
 			} else if ($mycoursetitle == 'unit') {
-				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('myunits', 'theme_udcessential');
+				$branchlabel = '<i class="icon-book"></i>'.get_string('myunits', 'theme_udcessential');
 				$branchtitle = get_string('myunits', 'theme_udcessential');
 			} else if ($mycoursetitle == 'class') {
-				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('myclasses', 'theme_udcessential');
+				$branchlabel = '<i class="icon-book"></i>'.get_string('myclasses', 'theme_udcessential');
 				$branchtitle = get_string('myclasses', 'theme_udcessential');
 			} else {
-				$branchlabel = '<i class="icon-briefcase"></i>'.get_string('mycourses', 'theme_udcessential');
+				$branchlabel = '<i class="icon-book"></i>'.get_string('mycourses', 'theme_udcessential');
 				$branchtitle = get_string('mycourses', 'theme_udcessential');
 			}
             $branchurl   = new moodle_url('/my/index.php');
@@ -133,18 +134,19 @@
     	*/
         $hasdisplaymydashboard = (empty($this->page->theme->settings->displaymydashboard)) ? false : $this->page->theme->settings->displaymydashboard;
         if (isloggedin() && $hasdisplaymydashboard) {
-            $branchlabel = '<i class="icon-dashboard"></i>'.get_string('mydashboard', 'theme_udcessential');
+            //$branchlabel = '<i class="icon-dashboard"></i>'.get_string('mydashboard', 'theme_udcessential');
+            $branchlabel = '<i class="icon-thumbs-up"></i>'.get_string('mydashboard', 'theme_udcessential');
             $branchurl   = new moodle_url('/my/index.php');
             $branchtitle = get_string('mydashboard', 'theme_udcessential');
             $branchsort  = 10000;
  
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
- 			$branch->add('<em><i class="icon-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile'));
+ 			//$branch->add('<em><i class="icon-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile'));
  			$branch->add('<em><i class="icon-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php'),get_string('pluginname', 'block_calendar_month'));
  			$branch->add('<em><i class="icon-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
  			$branch->add('<em><i class="icon-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges'));
  			$branch->add('<em><i class="icon-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
- 			$branch->add('<em><i class="icon-signout"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('logout'));    
+ 			//$branch->add('<em><i class="icon-signout"></i>'.get_string('logout').'</em>',new moodle_url('/login/logout.php'),get_string('logout'));    
         }
  
         return parent::render_custom_menu($menu);
