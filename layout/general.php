@@ -90,12 +90,13 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
-
-<header role="banner" class="navbar">
+<?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
+<br><br>
+GENERAL
+<header role="banner" class="navbar navbar-fixed-top">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"></i>&nbsp;<?php print_string('home'); ?></a>
+            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"> </i>&nbsp;UDC<?php //print_string('home'); ?></a>
             <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -120,6 +121,7 @@ echo $OUTPUT->doctype() ?>
 </header>
 
 <!-- Start Main Regions -->
+
 <div id="page" class="container-fluid">
 	<div id="page-content" class="row-fluid">
         <div id="<?php echo $regionbsid ?>" class="<?php echo $regionclass; ?>">

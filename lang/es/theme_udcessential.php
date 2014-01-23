@@ -83,6 +83,7 @@ $string['visibleadminonly'] = 'Los bloques colocados en esta área serán vistos
 $string['mydashboard'] = 'Mis Opciones';
 $string['mycourses'] = 'Mis Cursos';
 $string['noenrolments'] = 'No estás inscripto en ningún curso';
+$string['backtotop'] = 'Volver arriba';
 
 /* Navbar Seperator */
 $string['navbarsep'] = 'Separador para barra de navegación';

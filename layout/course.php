@@ -81,26 +81,28 @@ echo $OUTPUT->doctype() ?>
     <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 </head>
 
-<body <?php echo $OUTPUT->body_attributes(); ?> style="padding-top: 50px;">
+<body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
-
+<br><br>
+COURSE
 <header role="banner" class="navbar navbar-fixed-top">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"></i>&nbsp;UDC</a>
-            <a class="brand" href="#"><?php echo $COURSE->fullname; ?></a>
+            <a class="brand" href="#"><?php //echo $COURSE->fullname; ?></a>
             <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-                <?php if ($hascustommenu) {
-                                echo $custommenu;
-                            } ?>
+                <?php //if ($hascustommenu) {
+                    //echo $custommenu;
+                    echo $OUTPUT->custom_menu();
+                //} ?>
                             <!-- Botones personalizados del Usuario -->
                                 <?php //include 'includes/botones_usuario.php'?>
                             <!-- Fin de los botones personalizados del Usuario -->

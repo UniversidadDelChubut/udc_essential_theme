@@ -152,7 +152,8 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes(); ?> >
 
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
-    
+    <br><br>
+    FRONTPAGE
     <div id="cabecera" class="row-fluid">
         <div id="caja-flotante">
             <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
@@ -161,7 +162,7 @@ echo $OUTPUT->doctype() ?>
             <header  role="banner" class="navbar" >
                 <nav role="navigation" class="navbar-inner navbar-fixed-top">
                     <div class="container-fluid">
-                        <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+                        <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"> </i><?php echo $SITE->shortname; ?></a>
                         <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -171,9 +172,11 @@ echo $OUTPUT->doctype() ?>
                             <?php if ($hascustommenu) {
                                 echo $custommenu;
                             } ?>
+                            
                             <!-- Botones personalizados del Usuario -->
                                 <?php //include 'includes/botones_usuario.php'?>
                             <!-- Fin de los botones personalizados del Usuario -->
+                            
                             <!-- Inicio info del login del usuario -->
                             <ul class="nav pull-right">
                                 <li class="dropdown">
@@ -199,8 +202,9 @@ echo $OUTPUT->doctype() ?>
         </div>
         <!-- Fin del boton derecho de AYUDA -->
         
-        <div class="alert alert-success" align="center" style="font-size: 12pt; border: 2px blue solid"><strong> 
-            Bienvenidos al portal universitario de la Universidad del Chubut</strong>
+        <div class="alert alert-success" align="center" style="font-size: 12pt; border: 2px blue solid"> 
+            <img src="/moodle/theme/udcessential/pix/udc_logo.png" alt="Logo UDC">
+            <p style="width: 30%; height: 100%"><strong>Bienvenidos al portal universitario de la Universidad del Chubut</strong></p>
         </div>
         
         <!-- Inicio del div que contiene las ALERTAS, SLIDES y SPOTS -->
@@ -258,19 +262,26 @@ echo $OUTPUT->doctype() ?>
                  <!-- INICIO verificacion de capability del usuario registrado -->
                  <div align="center" style="border: 2px black solid">
                  <?php 
-                    //echo "<br>USUARIO_ID: ".$USER->id."<br>"; 
-                    //$context = context_user::instance($user->id);
-                    echo "UserID: ".$USER->id;
-                    /*if(true){
-                        echo "<br>Tiene capability<br>";
-                      }elseif(false){
-                        echo "<br>NOOO<br>";
-                      }elseif(true){
-                        echo "<br>NOOO<br>";
-                      }else{
-                        echo "<br>NOOO<br>";
-                      }*/
-                 ?>
+                                        
+                    echo "UserID: ".$USER->id."<br>";
+                    //var_dump($USER); ?>
+                    <!-- JAVASCRIPT para el Scrollback generico 
+                    <script>
+                        window.scrollback = {
+                         streams:["UniversidadDelChubut"],
+                         theme: 'light',
+                         ticker: true,
+                        };
+
+                        /***** don't edit below *****/
+                        (function(d,s,h,e){e=d.createElement(s);e.async=1;
+                        e.src=h+'/client.min.js';scrollback.host=h;
+                        d.getElementsByTagName(s)[0].parentNode.appendChild(e);}
+                        (document,'script',location.protocol+'//scrollback.io'));
+                   </script>
+                    -->
+                    
+                 
                  </div>
                  <!-- FIN de verificacion de capability del usuario registrado --> 
                  
@@ -328,8 +339,8 @@ echo $OUTPUT->doctype() ?>
                     <?php //si no hay internet, muestro un div con el error ?>
                     <?php else: ?>
                       <div class="alert alert-danger" style="height: 300px;">
-                          <p>No Hay Conexión a Internet.</p>
-                          <p>No se pueden mostrar las noticias vía RSS</p>
+                          <p style="padding-top: 120px;">No Hay Conexión a Internet.<br>
+                              No se pueden mostrar las noticias vía RSS</p>
                       </div>
                     <?php endif; ?>
                 </div>
@@ -429,6 +440,26 @@ echo $OUTPUT->doctype() ?>
         <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
     <?php } ?>
     <!-- End Google Analytics -->
+    
+    <script type="text/javascript">
+jQuery(document).ready(function() {
+    var offset = 220;
+    var duration = 500;
+    jQuery(window).scroll(function() {
+        if (jQuery(this).scrollTop() > offset) {
+            jQuery('.back-to-top').fadeIn(duration);
+        } else {
+            jQuery('.back-to-top').fadeOut(duration);
+        }
+    });
+    
+    jQuery('.back-to-top').click(function(event) {
+        event.preventDefault();
+        jQuery('html, body').animate({scrollTop: 0}, duration);
+        return false;
+    })
+});
+</script>
     
 </body>
 </html>
