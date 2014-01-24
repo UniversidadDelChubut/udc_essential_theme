@@ -383,6 +383,29 @@ echo $OUTPUT->doctype() ?>
                 </div>
             </div>
 
+            <!-- INICIO del CODIGO del CHAT de ScrollBack -->
+                <script>
+                    window.scrollback = {
+                     streams:["UniversidadDelChubut"],
+                     theme: 'light',
+                     ticker: true
+                    };
+
+                    /***** don't edit below *****/
+                    (
+                      function(d,s,h,e){
+                            e=d.createElement(s);
+                            e.async=1;
+                            e.src=h+'/client.min.js';
+                            scrollback.host=h;
+                            //scrollback.nick='nico';
+                            d.getElementsByTagName(s)[0].parentNode.appendChild(e);
+                      }
+                      (document,'script',location.protocol=="https:"?"https:":"http:"+'//scrollback.io')
+                    );
+                   </script>
+                
+            <!-- FIN del CODIGO del CHAT de ScrollBack -->
             <?php /*if (is_siteadmin()) { ?>
             <div class="hidden-blocks">
                 <div class="row-fluid">
