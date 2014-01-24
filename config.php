@@ -35,7 +35,7 @@ $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
 $THEME->sheets = array('custom', 'slides', 'lightbox', 'font-awesome');
 $THEME->supportscssoptimisation = false;
-//$THEME->enable_dock = false;
+
 $THEME->yuicssmodules = array();
 
 $THEME->editor_sheets = array();

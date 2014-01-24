@@ -152,8 +152,7 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes(); ?> >
 
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
-    <br><br>
-    FRONTPAGE
+    
     <div id="cabecera" class="row-fluid">
         <div id="caja-flotante">
             <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
@@ -162,7 +161,7 @@ echo $OUTPUT->doctype() ?>
             <header  role="banner" class="navbar" >
                 <nav role="navigation" class="navbar-inner navbar-fixed-top">
                     <div class="container-fluid">
-                        <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"> </i><?php echo $SITE->shortname; ?></a>
+                        <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"> </i>&nbsp;UDC<?php //echo $SITE->shortname; ?></a>
                         <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -202,15 +201,15 @@ echo $OUTPUT->doctype() ?>
         </div>
         <!-- Fin del boton derecho de AYUDA -->
         
-        <div class="alert alert-success" align="center" style="font-size: 12pt; border: 2px blue solid"> 
-            <img src="/moodle/theme/udcessential/pix/udc_logo.png" alt="Logo UDC">
-            <p style="width: 30%; height: 100%"><strong>Bienvenidos al portal universitario de la Universidad del Chubut</strong></p>
+        <div align="center" style="font-size: 15pt;"> 
+            <img src="/moodle/theme/udcessential/pix/udc_logo.png" alt="Logo UDC" width="30%" height="50%">
+            <p style="width: 50%; height: 100%"><strong>Bienvenidos a nuestro portal universitario.</strong></p>
         </div>
         
         <!-- Inicio del div que contiene las ALERTAS, SLIDES y SPOTS -->
         <div class="row-fluid">
+            <!-- Start Alerts -->
             <div class="span12">
-                <!-- Start Alerts -->
                 <!-- Alert #1 -->
                 <?php if ($hasalert1) { ?>  
                     <div class="useralerts alert alert-<?php echo $PAGE->theme->settings->alert1type ?>">  
@@ -257,125 +256,99 @@ echo $OUTPUT->doctype() ?>
                         echo $alert3icon.'<span class="title">'.$PAGE->theme->settings->alert3title.'</span>'.$PAGE->theme->settings->alert3text; ?> 
                     </div>
                 <?php } ?>
-                <!-- End Alerts -->
-                
-                 <!-- INICIO verificacion de capability del usuario registrado -->
-                 <div align="center" style="border: 2px black solid">
-                 <?php 
-                                        
-                    echo "UserID: ".$USER->id."<br>";
-                    //var_dump($USER); ?>
-                    <!-- JAVASCRIPT para el Scrollback generico 
-                    <script>
-                        window.scrollback = {
-                         streams:["UniversidadDelChubut"],
-                         theme: 'light',
-                         ticker: true,
-                        };
-
-                        /***** don't edit below *****/
-                        (function(d,s,h,e){e=d.createElement(s);e.async=1;
-                        e.src=h+'/client.min.js';scrollback.host=h;
-                        d.getElementsByTagName(s)[0].parentNode.appendChild(e);}
-                        (document,'script',location.protocol+'//scrollback.io'));
-                   </script>
-                    -->
-                    
-                 
-                 </div>
-                 <!-- FIN de verificacion de capability del usuario registrado --> 
-                 
             </div>
-            <div class="row-fluid">
-                <!-- Inicio de Script para saber si el usuario tiene conexion o no -->
-                
-                <!-- FIN de Script para saber si el usuario tiene conexion o no -->
-                
-                <!-- INICIO del código RSS insertado -->
-                <div class="span3" align="center">
-                    <?php
-                        // Veo si puedo obtener la dir IP y compruebo si hay internet o no
-                        $conexion = gethostbyname("www.google.com");
-                        //echo "CON: $conexion";
-                        //Si devuelve la dir IP, muestro el RSS
-                        if ($conexion != "www.google.com"):
-                    ?>
-                      <div>
-                        <p><strong>Nuestras últimas noticias</strong></p> 
-                        <!-- start feedwind code -->
-                        <script type="text/javascript">
-                             rssmikle_url="http://udc.edu.ar";
-                             rssmikle_frame_width="100%";
-                             rssmikle_frame_height="300";
-                             rssmikle_target="_blank";
-                             rssmikle_font="Arial, Helvetica, sans-serif";
-                             rssmikle_font_size="12";
-                             rssmikle_border="off"; //on
-                             rssmikle_css_url="";
-                             autoscroll="on"; //off
-                             rssmikle_title="on";
-                             rssmikle_title_bgcolor="#0066FF";
-                             rssmikle_title_color="#FFFFFF";
-                             rssmikle_title_bgimage="http://udc.edu.ar";
-                             rssmikle_item_bgcolor="#FFFFFF";
-                             rssmikle_item_bgimage="http://udc.edu.ar";
-                             rssmikle_item_title_length="55";
-                             rssmikle_item_title_color="#666666";
-                             rssmikle_item_border_bottom="on";
-                             rssmikle_item_description="on";
-                             rssmikle_item_description_length="100%";
-                             rssmikle_item_description_color="#666666";
-                             rssmikle_item_date="off";
-                             rssmikle_item_description_tag="off";
-                             rssmikle_item_podcast="off";
-                        </script>
-                        <script type="text/javascript" src="http://widget.feed.mikle.com/js/rssmikle.js"></script>
-                        <div style="font-size:10px; text-align:center;">
-                            <a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS widget</a>
-                            <!--Please display the above link in your web page according to Terms of Service.-->
-                        </div>
-                        <!-- end feedwind code -->
-                      </div>
-                    <?php //si no hay internet, muestro un div con el error ?>
-                    <?php else: ?>
-                      <div class="alert alert-danger" style="height: 300px;">
-                          <p style="padding-top: 120px;">No Hay Conexión a Internet.<br>
-                              No se pueden mostrar las noticias vía RSS</p>
-                      </div>
-                    <?php endif; ?>
-                </div>
-                <!-- FIN del código RSS insertado -->
-                
-                <div class="span6">
+            <!-- End Alerts -->
+            
+            <!-- Si el usuario NO esta logueado, muestro RSS, SPOTS y SLIDES -->
+            <?php if ($USER->id == 0):?>
+                <!-- Inicio RSS y los dos SLIDES -->
+                <div class="row-fluid">
+                    <!-- INICIO del código RSS insertado -->
+                    <div class="span3" align="center">
+                          <?php 
+                            // Veo si puedo obtener la dir IP y compruebo si hay internet o no
+                            $conexion = gethostbyname("www.google.com");
+                            //Si devuelve la dir IP es porque tengo internet
+                            if ($conexion != "www.google.com"): ?>
+                                <div>
+                                  <p><strong>Nuestras últimas noticias</strong></p> 
+                                  <!-- start feedwind code -->
+                                  <script type="text/javascript">
+                                       rssmikle_url="http://udc.edu.ar";
+                                       rssmikle_frame_width="100%";
+                                       rssmikle_frame_height="300";
+                                       rssmikle_target="_blank";
+                                       rssmikle_font="Arial, Helvetica, sans-serif";
+                                       rssmikle_font_size="12";
+                                       rssmikle_border="off"; //on
+                                       rssmikle_css_url="";
+                                       autoscroll="on"; //off
+                                       rssmikle_title="on";
+                                       rssmikle_title_bgcolor="#0066FF";
+                                       rssmikle_title_color="#FFFFFF";
+                                       rssmikle_title_bgimage="http://udc.edu.ar";
+                                       rssmikle_item_bgcolor="#FFFFFF";
+                                       rssmikle_item_bgimage="http://udc.edu.ar";
+                                       rssmikle_item_title_length="55";
+                                       rssmikle_item_title_color="#666666";
+                                       rssmikle_item_border_bottom="on";
+                                       rssmikle_item_description="on";
+                                       rssmikle_item_description_length="100%";
+                                       rssmikle_item_description_color="#666666";
+                                       rssmikle_item_date="off";
+                                       rssmikle_item_description_tag="off";
+                                       rssmikle_item_podcast="off";
+                                  </script>
+                                  <script type="text/javascript" src="http://widget.feed.mikle.com/js/rssmikle.js"></script>
+                                  <div style="font-size:10px; text-align:center;">
+                                      <a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS widget</a>
+                                      <!--Please display the above link in your web page according to Terms of Service.-->
+                                  </div>
+                                  <!-- end feedwind code -->
+                                </div>
+                            <!-- si no hay internet, muestro un div con el error -->
+                            <?php else:?>
+                              <div  style="height: 300px;"> <!-- class="alert alert-danger"-->
+                                  <div style="width: 80%; height: 60%; position: static">
+                                      <img src="/moodle/theme/udcessential/pix/udc_pagina.png" alt="Sin conexión">
+                                  </div><br><br><br>
+                                  <p> <!-- style="padding-top: 120px;" -->No Hay Conexión a Internet.<br>
+                                      No se pueden mostrar las noticias vía RSS</p>
+                              </div>
+                            <?php endif; ?>
+                    </div>
+                    <!-- FIN del código RSS insertado -->
+
                     <!-- Start Slideshow -->
-                    <?php 
-                            if($PAGE->theme->settings->toggleslideshow==1) {
-                                    require_once(dirname(__FILE__).'/includes/slideshow.php');
-                            } else if($PAGE->theme->settings-> toggleslideshow==2 && !isloggedin()) {
-                                    require_once(dirname(__FILE__).'/includes/slideshow.php');
-                            } else if($PAGE->theme->settings-> toggleslideshow==3 && isloggedin()) {
-                                    require_once(dirname(__FILE__).'/includes/slideshow.php');
-                            } 
-                    ?>
+                    <div class="span6">
+                        <?php 
+                                if($PAGE->theme->settings->toggleslideshow==1) {
+                                        require_once(dirname(__FILE__).'/includes/slideshow.php');
+                                } else if($PAGE->theme->settings-> toggleslideshow==2 && !isloggedin()) {
+                                        require_once(dirname(__FILE__).'/includes/slideshow.php');
+                                } else if($PAGE->theme->settings-> toggleslideshow==3 && isloggedin()) {
+                                        require_once(dirname(__FILE__).'/includes/slideshow.php');
+                                } 
+                        ?>
+                    </div>
                     <!-- End Slideshow -->
-                </div>
 
-                <div class="span3" style="float: right;">
-                    <!-- Start Marketing Spots 
-                        <div>-->
-                            <?php    
-                                    if($PAGE->theme->settings->togglemarketing==1) {
-                                            require_once(dirname(__FILE__).'/includes/marketingspots.php');
-                                    } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
-                                            require_once(dirname(__FILE__).'/includes/marketingspots.php');
-                                    } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
-                                            require_once(dirname(__FILE__).'/includes/marketingspots.php');
-                                    } 
-                            ?>
-                        <!--</div>
-                    End Marketing Spots -->
+                    <!-- Start Marketing Spots -->
+                    <div class="span3" style="float: right;">
+                                <?php
+                                        if($PAGE->theme->settings->togglemarketing==1) {
+                                                require_once(dirname(__FILE__).'/includes/marketingspots.php');
+                                        } else if($PAGE->theme->settings->togglemarketing==2 && !isloggedin()) {
+                                                require_once(dirname(__FILE__).'/includes/marketingspots.php');
+                                        } else if($PAGE->theme->settings->togglemarketing==3 && isloggedin()) {
+                                                require_once(dirname(__FILE__).'/includes/marketingspots.php');
+                                        } 
+                                ?>                    
+                    </div>
+                    <!-- End Marketing Spots -->
                 </div>
-            </div>
+                <!-- FIN del RSS y los dos SLIDES -->
+            <?php endif; ?>
         </div>
         <!-- FIN del div que contiene las ALERTAS, SLIDES y SPOTS -->
         
@@ -427,6 +400,8 @@ echo $OUTPUT->doctype() ?>
     </div>
     <!-- Fin del div que contiene la pagina principal -->
     
+    <a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_udcessential'); ?></p></a>
+    
     <footer id="page-footer" class="container-fluid">
         <?php require_once(dirname(__FILE__).'/includes/footer.php'); ?>
     </footer>
@@ -440,26 +415,26 @@ echo $OUTPUT->doctype() ?>
         <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
     <?php } ?>
     <!-- End Google Analytics -->
-    
+        
     <script type="text/javascript">
-jQuery(document).ready(function() {
-    var offset = 220;
-    var duration = 500;
-    jQuery(window).scroll(function() {
-        if (jQuery(this).scrollTop() > offset) {
-            jQuery('.back-to-top').fadeIn(duration);
-        } else {
-            jQuery('.back-to-top').fadeOut(duration);
-        }
-    });
-    
-    jQuery('.back-to-top').click(function(event) {
-        event.preventDefault();
-        jQuery('html, body').animate({scrollTop: 0}, duration);
-        return false;
-    })
-});
-</script>
+        jQuery(document).ready(function() {
+            var offset = 220;
+            var duration = 500;
+            jQuery(window).scroll(function() {
+                if (jQuery(this).scrollTop() > offset) {
+                    jQuery('.back-to-top').fadeIn(duration);
+                } else {
+                    jQuery('.back-to-top').fadeOut(duration);
+                }
+            });
+
+            jQuery('.back-to-top').click(function(event) {
+                event.preventDefault();
+                jQuery('html, body').animate({scrollTop: 0}, duration);
+                return false;
+            })
+        });
+    </script>
     
 </body>
 </html>

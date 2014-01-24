@@ -92,7 +92,7 @@ echo $OUTPUT->doctype() ?>
 
 <?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
 <br><br>
-GENERAL
+<!--GENERAL-->
 <header role="banner" class="navbar navbar-fixed-top">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
