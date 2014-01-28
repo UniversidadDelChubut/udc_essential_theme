@@ -382,30 +382,34 @@ echo $OUTPUT->doctype() ?>
                     </div>
                 </div>
             </div>
+            <?php if (($USER->id != 0) && ($conexion != "www.google.com")):?>
+                <?php //var_dump($USER)?>
+                <br><br>
+                <?php $nick = $USER->firstname.", ".$USER->lastname ?>
+                <!-- INICIO del CODIGO del CHAT de ScrollBack -->
+                    <script>
+                        window.scrollback = {
+                         streams:["UniversidadDelChubut"],
+                         theme: 'light',
+                         ticker: true                         
+                        };
 
-            <!-- INICIO del CODIGO del CHAT de ScrollBack -->
-                <script>
-                    window.scrollback = {
-                     streams:["UniversidadDelChubut"],
-                     theme: 'light',
-                     ticker: true
-                    };
+                        /***** don't edit below *****/
+                        (
+                          function(d,s,h,e){
+                                e=d.createElement(s);
+                                e.async=1;
+                                e.src=h+'/client.min.js';
+                                scrollback.host=h;
+                                //scrollback.nick='nico';
+                                d.getElementsByTagName(s)[0].parentNode.appendChild(e);
+                          }
+                          (document,'script',location.protocol=="https:"?"https:":"http:"+'//scrollback.io')
+                        );
+                    </script>
 
-                    /***** don't edit below *****/
-                    (
-                      function(d,s,h,e){
-                            e=d.createElement(s);
-                            e.async=1;
-                            e.src=h+'/client.min.js';
-                            scrollback.host=h;
-                            //scrollback.nick='nico';
-                            d.getElementsByTagName(s)[0].parentNode.appendChild(e);
-                      }
-                      (document,'script',location.protocol=="https:"?"https:":"http:"+'//scrollback.io')
-                    );
-                   </script>
-                
-            <!-- FIN del CODIGO del CHAT de ScrollBack -->
+                <!-- FIN del CODIGO del CHAT de ScrollBack -->
+            <?php endif;?>
             <?php /*if (is_siteadmin()) { ?>
             <div class="hidden-blocks">
                 <div class="row-fluid">
