@@ -309,11 +309,12 @@
                     $username .= " from {$idprovider->name}";
                 }
             }
-            if (isguestuser()) {
-                $loggedinas = $realuserinfo.get_string('loggedinasguest');
-                if (!$loginpage && $withlinks) {
-                    $loggedinas .= " (<a href=\"$loginurl\">".get_string('login').'</a>)';
-                }
+            if (isguestuser()) {  //el usuario es Invitado?
+                //$loggedinas = $realuserinfo.get_string('loggedinasguest');
+                $loggedinas = "<p style='color: white; font-size: 12pt;'><strong>Usuario Invitado</strong></p>";
+                //if (!$loginpage && $withlinks) {
+                //    $loggedinas .= " (<a href=\"$loginurl\">".get_string('login').'</a>)';
+                //}
             } else if (is_role_switched($course->id)) { // Has switched roles
                 $rolename = '';
                 if ($role = $DB->get_record('role', array('id'=>$USER->access['rsw'][$context->path]))) {

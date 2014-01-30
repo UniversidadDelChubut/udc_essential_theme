@@ -356,7 +356,8 @@ echo $OUTPUT->doctype() ?>
         
         <!-- Inicio del div que contiene el contenido Principal -->
         <div class="row-fluid">
-
+            <?php //echo "NICO: ".$USER->id."<br>";
+                  //var_dump($USER)?>
             <!-- Start Frontpage Content -->            
             <?php if($PAGE->theme->settings->usefrontcontent ==1) { 
                 echo $PAGE->theme->settings->frontcontentarea; ?>
