@@ -33,7 +33,7 @@ $THEME->name = 'udcessential';
 $THEME->doctype = 'html5';
 $THEME->yuicssmodules = array();
 $THEME->parents = array('bootstrapbase');
-$THEME->sheets = array('custom', 'slides', 'lightbox', 'font-awesome');
+$THEME->sheets = array('custom', 'slides', 'lightbox', 'font-awesome', 'css_agregadas');
 $THEME->supportscssoptimisation = false;
 
 $THEME->yuicssmodules = array();

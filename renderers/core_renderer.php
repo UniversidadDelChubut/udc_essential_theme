@@ -310,11 +310,12 @@
                 }
             }
             if (isguestuser()) {  //el usuario es Invitado?
-                //$loggedinas = $realuserinfo.get_string('loggedinasguest');
-                $loggedinas = "<p style='color: white; font-size: 12pt;'><strong>Usuario Invitado</strong></p>";
-                //if (!$loginpage && $withlinks) {
-                //    $loggedinas .= " (<a href=\"$loginurl\">".get_string('login').'</a>)';
-                //}
+                $loggedinas = $realuserinfo.get_string('loggedinasguest');
+                //$loggedinas = "<p style='color: white; font-size: 12pt;'><strong>Usuario Invitado</strong></p>";
+                if (!$loginpage && $withlinks) {
+                    //$loggedinas .= " (<a href=\"$loginurl\">".get_string('login').'</a>)';
+                    $loggedinas = "<a href=\"$loginurl\"><i class=\"icon icon-white icon-home\"></i> Invitado</a>";
+                }
             } else if (is_role_switched($course->id)) { // Has switched roles
                 $rolename = '';
                 if ($role = $DB->get_record('role', array('id'=>$USER->access['rsw'][$context->path]))) {

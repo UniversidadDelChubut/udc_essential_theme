@@ -169,7 +169,9 @@ echo $OUTPUT->doctype() ?>
                         </a>
                         <div class="nav-collapse collapse">
                             <?php if ($hascustommenu) {
-                                echo $custommenu;
+                                if($USER->username != 'guest'){
+                                    echo $custommenu;
+                                }
                             } ?>
                             
                             <!-- Botones personalizados del Usuario -->
@@ -200,7 +202,9 @@ echo $OUTPUT->doctype() ?>
             </div>
         </div>
         <!-- Fin del boton derecho de AYUDA -->
-        
+        <div data-spy="affix" data-offset-top="200" class="pseudo-docks">
+            <?php echo $OUTPUT->essentialblocks('side-pre'); ?>
+        </div>
         <div align="center" style="font-size: 15pt;"> 
             <img src="/moodle/theme/udcessential/pix/udc_logo.png" alt="Logo UDC" width="30%" height="50%">
             <p style="width: 50%; height: 100%"><strong>Bienvenidos a nuestro portal universitario.</strong></p>
@@ -356,33 +360,30 @@ echo $OUTPUT->doctype() ?>
         
         <!-- Inicio del div que contiene el contenido Principal -->
         <div class="row-fluid">
-            <?php //echo "NICO: ".$USER->id."<br>";
-                  //var_dump($USER)?>
+            <?php echo "NICO: ".$USER->id."<br>";
+                  echo "Name: ".$USER->username."<br>";
+                  //echo var_dump($USER)
+            ?>
             <!-- Start Frontpage Content -->            
             <?php if($PAGE->theme->settings->usefrontcontent ==1) { 
                 echo $PAGE->theme->settings->frontcontentarea; ?>
                 <div class="bor" style="margin-top: 10px;"></div>	
             <?php }?>
             <!-- End Frontpage Content -->
-
-            <div id="page-content" class="row-fluid">
-                <div id="<?php echo $regionbsid ?>" class="span12">
-                    <div class="row-fluid">
-                        <div id="region-main-udcessential">                            
-                            <section id="region-main" class="span8 desktop-first-column">
-                                <?php
-                                    echo $OUTPUT->course_content_header();
-                                    echo $OUTPUT->main_content();
-                                    echo $OUTPUT->course_content_footer();
-                                ?>
-                            </section>
-                        </div>
-                        <div>
-                            <?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
-                        </div>
-                    </div>
+        </div>
+        <div id="page-content" class="row-fluid">
+            <div id="<?php echo $regionbsid ?>" class="span12">
+                <div id="region-main-udcessential">                            
+                    <section id="region-main" class="desktop-first-column">
+                        <?php
+                            echo $OUTPUT->course_content_header();
+                            echo $OUTPUT->main_content();
+                            echo $OUTPUT->course_content_footer();
+                        ?>
+                    </section>
                 </div>
             </div>
+        </div>
             <?php if (($USER->id != 0) && ($conexion != "www.google.com")):?>
                 <?php //var_dump($USER)?>
                 <br><br>
@@ -392,7 +393,7 @@ echo $OUTPUT->doctype() ?>
                         window.scrollback = {
                          streams:["UniversidadDelChubut"],
                          theme: 'light',
-                         ticker: true                         
+                         ticker: true
                         };
 
                         /***** don't edit below *****/
@@ -425,7 +426,7 @@ echo $OUTPUT->doctype() ?>
 
         </div>
         <!-- Fin del div que contiene el contenido Principal -->
-    </div>
+    
     <!-- Fin del div que contiene la pagina principal -->
     
     <a href="#top" class="back-to-top"><i class="icon-chevron-sign-up"></i><p><?php print_string('backtotop', 'theme_udcessential'); ?></p></a>
