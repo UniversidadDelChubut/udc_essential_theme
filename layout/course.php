@@ -76,13 +76,24 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
+    <?php //require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
-    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
+    <?php //require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
+<!--
+<br>
+<br>
+<br>
+<br>
+COURSE
+<br>
+<br>
+<br>
+-->
+    
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
@@ -99,12 +110,11 @@ echo $OUTPUT->doctype() ?>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-                <?php //if ($hascustommenu) {
-                    //echo $custommenu;
+                <?php if($USER->username != 'guest'){
                     echo $OUTPUT->custom_menu();
-                //} ?>
+                } ?>
                             <!-- Botones personalizados del Usuario -->
-                                <?php //include 'includes/botones_usuario.php'?>
+                                <?php include 'includes/botones_usuario.php'?>
                             <!-- Fin de los botones personalizados del Usuario -->
                             <!-- Inicio info del login del usuario -->
                             <ul class="nav pull-right">

@@ -67,94 +67,100 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
 } ?>
 
     <div class="container-fluid">
-    <div class="row-fluid">
-    <!-- HEADER: LOGO AREA -->
-        <?php if ($hassocialnetworks && $hasmobileapps) { ?>
-        	<div class="span6">
-        <?php } else if (!$hassocialnetworks && $hasmobileapps) { ?>
-        	<div class="span6">
-        <?php } else if ($hassocialnetworks && !$hasmobileapps) { ?>
-        	<div class="span6">
-        <?php } else { ?>
-        	<div class="span11">
-        <?php } ?>
-            <?php
-            if (!$haslogo) { ?>
-                <i id="headerlogo" class="icon-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
-                <h1 id="title"><?php echo $SITE->shortname; ?></h1>
-                <h2 id="subtitle"><?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?></h2>
-                
-            <?php
-            } else { ?>
-                <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
-            <?php
-            } ?>
-        </div>
-        
-         <?php
-        // If true, displays the heading and available social links; displays nothing if false.
-        if ($hassocialnetworks) {
-        ?>
-        <div class="span3 pull-right">
-        <p id="socialheading"><?php echo get_string('socialnetworks','theme_udcessential')?></p>
-            <ul class="socials unstyled">
-                <?php if ($haswebsite) { ?>
-                <li><a href="<?php echo $haswebsite; ?>" target="_blank" class="website"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-globe icon-light"></i></span></a></li>
-                <?php } ?>
-                <?php if ($hasgoogleplus) { ?>
-                <li><a href="<?php echo $hasgoogleplus; ?>" target="_blank" class="googleplus"><i class="icon-google-plus-sign"></i></a></li>
-                <?php } ?>
-                <?php if ($hastwitter) { ?>
-                <li><a href="<?php echo $hastwitter; ?>" target="_blank" class="twitter"><i class="icon-twitter-sign"></i></a></li>
-                <?php } ?>
-                <?php if ($hasfacebook) { ?>
-                <li><a href="<?php echo $hasfacebook; ?>" target="_blank" class="facebook"><i class="icon-facebook-sign"></i></a></li>
-                <?php } ?>
-                <?php if ($haslinkedin) { ?>
-                <li><a href="<?php echo $haslinkedin; ?>" target="_blank" class="linkedin"><i class="icon-linkedin-sign"></i></a></li>
-                <?php } ?>
-                <?php if ($hasyoutube) { ?>
-                <li><a href="<?php echo $hasyoutube; ?>" target="_blank" class="youtube"><i class="icon-youtube-sign"></i></a></li>
-                <?php } ?>
-                <?php if ($hasflickr) { ?>
-                <li><a href="<?php echo $hasflickr; ?>" target="_blank" class="flickr"><i class="icon-flickr"></i></a></li>
-                <?php } ?>
-                <?php if ($haspinterest) { ?>
-                <li><a href="<?php echo $haspinterest; ?>" target="_blank" class="pinterest"><i class="icon-pinterest-sign"></i></a></li>
-                <?php } ?>
-                <?php if ($hasinstagram) { ?>
-                <li><a href="<?php echo $hasinstagram; ?>" target="_blank" class="instagram"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-instagram icon-light"></i></span></a></li>
-                <?php } ?>
-                <?php if ($hasvk) { ?>
-                <li><a href="<?php echo $hasvk; ?>" target="_blank" class="vk"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-vk icon-light"></i></span></a></li>
-                <?php } ?>
-                <?php if ($hasskype) { ?>
-                <li><a href="<?php echo $hasskype; ?>" target="_blank" class="skype"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-skype icon-light"></i></span></a></li>
-                <?php } ?>
-	    </ul>
-        </div>
-        <?php 
-        }
+        <div class="row-fluid span12">
+        <!-- HEADER: LOGO AREA -->
+            <?php if ($hassocialnetworks && $hasmobileapps) { ?>
+                    <div class="span3">
+            <?php } else if (!$hassocialnetworks && $hasmobileapps) { ?>
+                    <div class="span3">
+            <?php } else if ($hassocialnetworks && !$hasmobileapps) { ?>
+                    <div class="span3">
+            <?php } else { ?>
+                    <div class="span11">
+            <?php } ?>
+                <?php
+                if (!$haslogo) { ?>
+                    <i id="headerlogo" class="icon-<?php echo $PAGE->theme->settings->siteicon ?>"></i>
+                    <h1 id="title"><?php echo $SITE->shortname; ?></h1>
+                    <h2 id="subtitle"><?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?></h2>
 
-        // If true, displays the heading and available social links; displays nothing if false.
-        if ($hasmobileapps) {
-        ?>
-        <div class="span2 pull-right">
-        <p id="socialheading"><?php echo get_string('mobileappsheading','theme_udcessential')?></p>
-            <ul class="socials unstyled">
-                <?php if ($hasios) { ?>
-                <li><a href="<?php echo $hasios; ?>" class="ios"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-apple icon-light"></i></span></a></li>
-                <?php } ?>
-                <?php if ($hasandroid) { ?>
-                <li><a href="<?php echo $hasandroid; ?>" class="android"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-android icon-light"></i></span></a></li>
-                <?php } ?>
-	    </ul>
-        </div>
-        <?php 
-        }
+                <?php
+                } else { ?>
+                    <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
+                <?php
+                } ?>
+                </div> <!-- cierro el div donde se muestra el logo class="span4" -->
+        
+            <div class="span6" style='text-align: center; font-size: 24px; color: black;
+                 padding-top: 25px;'>
+                <strong>Bienvenido a nuestro portal universitario!</strong>
+            </div>
+                    
+                    
+            <?php
+           // If true, displays the heading and available social links; displays nothing if false.
+           if ($hassocialnetworks) {
+           ?>
+           <div class="span3 pull-right">
+           <p id="socialheading"><?php echo get_string('socialnetworks','theme_udcessential')?></p>
+               <ul class="socials unstyled">
+                   <?php if ($haswebsite) { ?>
+                   <li><a href="<?php echo $haswebsite; ?>" target="_blank" class="website"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-globe icon-light"></i></span></a></li>
+                   <?php } ?>
+                   <?php if ($hasgoogleplus) { ?>
+                   <li><a href="<?php echo $hasgoogleplus; ?>" target="_blank" class="googleplus"><i class="icon-google-plus-sign"></i></a></li>
+                   <?php } ?>
+                   <?php if ($hastwitter) { ?>
+                   <li><a href="<?php echo $hastwitter; ?>" target="_blank" class="twitter"><i class="icon-twitter-sign"></i></a></li>
+                   <?php } ?>
+                   <?php if ($hasfacebook) { ?>
+                   <li><a href="<?php echo $hasfacebook; ?>" target="_blank" class="facebook"><i class="icon-facebook-sign"></i></a></li>
+                   <?php } ?>
+                   <?php if ($haslinkedin) { ?>
+                   <li><a href="<?php echo $haslinkedin; ?>" target="_blank" class="linkedin"><i class="icon-linkedin-sign"></i></a></li>
+                   <?php } ?>
+                   <?php if ($hasyoutube) { ?>
+                   <li><a href="<?php echo $hasyoutube; ?>" target="_blank" class="youtube"><i class="icon-youtube-sign"></i></a></li>
+                   <?php } ?>
+                   <?php if ($hasflickr) { ?>
+                   <li><a href="<?php echo $hasflickr; ?>" target="_blank" class="flickr"><i class="icon-flickr"></i></a></li>
+                   <?php } ?>
+                   <?php if ($haspinterest) { ?>
+                   <li><a href="<?php echo $haspinterest; ?>" target="_blank" class="pinterest"><i class="icon-pinterest-sign"></i></a></li>
+                   <?php } ?>
+                   <?php if ($hasinstagram) { ?>
+                   <li><a href="<?php echo $hasinstagram; ?>" target="_blank" class="instagram"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-instagram icon-light"></i></span></a></li>
+                   <?php } ?>
+                   <?php if ($hasvk) { ?>
+                   <li><a href="<?php echo $hasvk; ?>" target="_blank" class="vk"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-vk icon-light"></i></span></a></li>
+                   <?php } ?>
+                   <?php if ($hasskype) { ?>
+                   <li><a href="<?php echo $hasskype; ?>" target="_blank" class="skype"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-skype icon-light"></i></span></a></li>
+                   <?php } ?>
+               </ul>
+           </div>
+           <?php 
+           }
+
+            // If true, displays the heading and available social links; displays nothing if false.
+            if ($hasmobileapps) {
+            ?>
+            <div class="span2 pull-right">
+            <p id="socialheading"><?php echo get_string('mobileappsheading','theme_udcessential')?></p>
+                <ul class="socials unstyled">
+                    <?php if ($hasios) { ?>
+                    <li><a href="<?php echo $hasios; ?>" class="ios"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-apple icon-light"></i></span></a></li>
+                    <?php } ?>
+                    <?php if ($hasandroid) { ?>
+                    <li><a href="<?php echo $hasandroid; ?>" class="android"><span class="icon-stack"><i class="icon-sign-blank icon-stack-base"></i><i class="icon-android icon-light"></i></span></a></li>
+                    <?php } ?>
+                </ul>
+            </div>
+            <?php 
+            }
         
         if (!empty($courseheader)) { ?>
-        <div id="course-header"><?php echo $courseheader; ?></div>
+            <div id="course-header"><?php echo $courseheader; ?></div>
         <?php } ?>
     </div>
   </div>

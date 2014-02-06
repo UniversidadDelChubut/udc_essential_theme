@@ -1,5 +1,5 @@
 <!-- Si el usuario esta logueado, muestro los botones -->
-<?php if ($USER->id != 0) {?>
+<?php if (($USER->id != 0)&&($USER->username != 'guest')) {?>
     <ul class="nav pull-left">
         <div class="nav-collapse collapse">
             <div class="btn-group" id="btn_course_links">

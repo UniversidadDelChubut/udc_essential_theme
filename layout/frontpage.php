@@ -137,9 +137,9 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
+    <?php //require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
-    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
+    <?php //require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
     <noscript>
 	<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/udcessential/style/nojs.css" />
     </noscript>
@@ -150,7 +150,17 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?> >
-
+<!--
+<br>
+<br>
+<br>
+<br>
+FONTPAGE
+<br>
+<br>
+<br>
+-->
+    
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
     
     <div id="cabecera" class="row-fluid">
@@ -168,16 +178,14 @@ echo $OUTPUT->doctype() ?>
                             <span class="icon-bar"></span>
                         </a>
                         <div class="nav-collapse collapse">
+                            <!-- Botones personalizados del Usuario -->
+                                <?php include 'includes/botones_usuario.php'?>
+                            <!-- Fin de los botones personalizados del Usuario -->
                             <?php if ($hascustommenu) {
                                 if($USER->username != 'guest'){
                                     echo $custommenu;
                                 }
                             } ?>
-                            
-                            <!-- Botones personalizados del Usuario -->
-                                <?php //include 'includes/botones_usuario.php'?>
-                            <!-- Fin de los botones personalizados del Usuario -->
-                            
                             <!-- Inicio info del login del usuario -->
                             <ul class="nav pull-right">
                                 <li class="dropdown">
@@ -191,6 +199,12 @@ echo $OUTPUT->doctype() ?>
             </header>
         </div>
     </div>
+    
+    <!-- Inicio del bloque AJUSTES tipo Javascript -->
+        <div data-spy="affix" data-offset-top="200" class="pseudo-docks">
+            <?php echo $OUTPUT->essentialblocks('side-pre'); ?>
+        </div>
+    <!-- Fin del bloque AJUSTES tipo Javascript -->
 
     <!-- Inicio del div que contiene la pagina principal -->
     <div id="page" class="container-fluid"> <!--style="border: black 1px solid"> -->
@@ -198,17 +212,15 @@ echo $OUTPUT->doctype() ?>
         <!-- Inicio del boton derecho de AYUDA -->
         <div style="float: right;">
             <div style="position: fixed;">
-                <a href="http://udc.edu.ar" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt="Ayuda" width="50px" height="50px" style="padding-left: 15%" ></a>
+                <a href="http://udc.edu.ar" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt='Ayuda' title="Ayuda" width="50px" height="50px" style="padding-left: 15%" ></a>
             </div>
         </div>
         <!-- Fin del boton derecho de AYUDA -->
-        <div data-spy="affix" data-offset-top="200" class="pseudo-docks">
-            <?php echo $OUTPUT->essentialblocks('side-pre'); ?>
-        </div>
-        <div align="center" style="font-size: 15pt;"> 
+        
+        <!-- <div align="center" style="font-size: 15pt;"> 
             <img src="/moodle/theme/udcessential/pix/udc_logo.png" alt="Logo UDC" width="30%" height="50%">
             <p style="width: 50%; height: 100%"><strong>Bienvenidos a nuestro portal universitario.</strong></p>
-        </div>
+        </div> -->
         
         <!-- Inicio del div que contiene las ALERTAS, SLIDES y SPOTS -->
         <div class="row-fluid">
@@ -274,13 +286,12 @@ echo $OUTPUT->doctype() ?>
                             $conexion = gethostbyname("www.google.com");
                             //Si devuelve la dir IP es porque tengo internet
                             if ($conexion != "www.google.com"): ?>
-                                <div>
-                                  <p><strong>Nuestras últimas noticias</strong></p> 
+                                <div  style="padding-top: 10px; border-bottom: 5px #00adf7 solid;">
                                   <!-- start feedwind code -->
                                   <script type="text/javascript">
                                        rssmikle_url="http://udc.edu.ar";
                                        rssmikle_frame_width="100%";
-                                       rssmikle_frame_height="300";
+                                       rssmikle_frame_height="297";
                                        rssmikle_target="_blank";
                                        rssmikle_font="Arial, Helvetica, sans-serif";
                                        rssmikle_font_size="12";
@@ -290,9 +301,9 @@ echo $OUTPUT->doctype() ?>
                                        rssmikle_title="on";
                                        rssmikle_title_bgcolor="#0066FF";
                                        rssmikle_title_color="#FFFFFF";
-                                       rssmikle_title_bgimage="http://udc.edu.ar";
-                                       rssmikle_item_bgcolor="#FFFFFF";
-                                       rssmikle_item_bgimage="http://udc.edu.ar";
+                                       rssmikle_title_bgimage="";
+                                       rssmikle_item_bgcolor="#F7F5F5";//"#FFFFFF";
+                                       rssmikle_item_bgimage="http://localhost/moodle/theme/image.php/udcessential/theme/1391712447/bg/header";
                                        rssmikle_item_title_length="55";
                                        rssmikle_item_title_color="#666666";
                                        rssmikle_item_border_bottom="on";
@@ -304,10 +315,10 @@ echo $OUTPUT->doctype() ?>
                                        rssmikle_item_podcast="off";
                                   </script>
                                   <script type="text/javascript" src="http://widget.feed.mikle.com/js/rssmikle.js"></script>
-                                  <div style="font-size:10px; text-align:center;">
+                                  <!--<div style="font-size:10px; text-align:center;">
                                       <a href="http://feed.mikle.com/" target="_blank" style="color:#CCCCCC;">RSS widget</a>
-                                      <!--Please display the above link in your web page according to Terms of Service.-->
-                                  </div>
+                                      Please display the above link in your web page according to Terms of Service.
+                                  </div>-->
                                   <!-- end feedwind code -->
                                 </div>
                             <!-- si no hay internet, muestro un div con el error -->
@@ -356,12 +367,12 @@ echo $OUTPUT->doctype() ?>
         </div>
         <!-- FIN del div que contiene las ALERTAS, SLIDES y SPOTS -->
         
-        <hr>
+        
         
         <!-- Inicio del div que contiene el contenido Principal -->
         <div class="row-fluid">
-            <?php echo "NICO: ".$USER->id."<br>";
-                  echo "Name: ".$USER->username."<br>";
+            <?php //echo "NICO: ".$USER->id."<br>";
+                  //echo "Name: ".$USER->username."<br>";
                   //echo var_dump($USER)
             ?>
             <!-- Start Frontpage Content -->            

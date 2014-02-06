@@ -41,13 +41,23 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
+    <?php //require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
-    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
+    <?php //require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
-
+<!--
+<br>
+<br>
+<br>
+<br>
+LOGIN
+<br>
+<br>
+<br>
+-->
+    
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
@@ -63,9 +73,11 @@ echo $OUTPUT->doctype() ?>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-            <?php echo $OUTPUT->custom_menu(); ?>
+               <?php if($USER->username != 'guest'){
+                         echo $OUTPUT->custom_menu(); 
+               }?>            
             <ul class="nav pull-right">
-            <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+            <li><?php //echo $OUTPUT->page_heading_menu(); ?></li>
             <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
             </ul>
             </div>
