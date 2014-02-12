@@ -150,16 +150,6 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?> >
-<!--
-<br>
-<br>
-<br>
-<br>
-FONTPAGE
-<br>
-<br>
-<br>
--->
     
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
     
@@ -200,12 +190,6 @@ FONTPAGE
         </div>
     </div>
     
-    <!-- Inicio del bloque AJUSTES tipo Javascript -->
-        <div data-spy="affix" data-offset-top="200" class="pseudo-docks">
-            <?php echo $OUTPUT->essentialblocks('side-pre'); ?>
-        </div>
-    <!-- Fin del bloque AJUSTES tipo Javascript -->
-
     <!-- Inicio del div que contiene la pagina principal -->
     <div id="page" class="container-fluid"> <!--style="border: black 1px solid"> -->
         
@@ -385,7 +369,7 @@ FONTPAGE
         <div id="page-content" class="row-fluid">
             <div id="<?php echo $regionbsid ?>" class="span12">
                 <div id="region-main-udcessential">                            
-                    <section id="region-main" class="desktop-first-column">
+                    <section id="region-main" class="span8 desktop-first-column">
                         <?php
                             echo $OUTPUT->course_content_header();
                             echo $OUTPUT->main_content();
@@ -393,9 +377,12 @@ FONTPAGE
                         ?>
                     </section>
                 </div>
+                <div>
+                  <?php echo $OUTPUT->essentialblocks('side-pre', 'span4 pull-right'); ?>
+                </div>
             </div>
         </div>
-            <?php if (($USER->id != 0) && ($conexion != "www.google.com")):?>
+            <?php if (($USER->id != 0) && (isset($conexion) && $conexion != "www.google.com")):?>
                 <?php //var_dump($USER)?>
                 <br><br>
                 <?php $nick = $USER->firstname.", ".$USER->lastname ?>
