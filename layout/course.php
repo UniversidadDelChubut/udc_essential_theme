@@ -111,32 +111,17 @@ COURSE
             </a>
             <div class="nav-collapse collapse">
                 <?php if($USER->username != 'guest'){
-                    echo $OUTPUT->custom_menu();
+                    //echo $OUTPUT->custom_menu();
                 } ?>
-                            <!-- Botones personalizados del Usuario -->
-                                <?php include 'includes/botones_usuario.php'?>
-                            <!-- Fin de los botones personalizados del Usuario -->
-                            <!-- Inicio info del login del usuario -->
-                            <ul class="nav pull-right">
-                                <li class="dropdown">
-                                    <?php echo $OUTPUT->login_info() ?>
-                                </li>
-                            </ul>
-                            <!-- Fin info del login del usuario -->
-                            
-                        <!-- ******* esto estaba hecho por Martin ******* -->               
-                        <?php //echo $OUTPUT->custom_menu(); ?>
-                          <!--<div class="btn-group" id="btn_course_links">
-                                <a href="<?php //echo $CFG->wwwroot."/course/view.php?id=".$COURSE->id;?>" class="btn btn-info" title="Inicio del curso"><i class="icon-white icon-home"></i></a>
-                                <a href="<?php //echo $CFG->wwwroot."/calendar/view.php?view=upcoming&course=".$COURSE->id;?>" class="btn btn-info" title="Próximos eventos"><i class="icon-white icon-calendar"></i></a>
-                                <a href="<?php //echo $CFG->wwwroot."/message/index.php";?>" class="btn btn-info" title="Mensajes"><i class="icon-white icon-envelope"></i></a>
-                              </div>
-                              <ul class="nav pull-right">
-                                <li class="dropdown">
-                                    <?php //echo $OUTPUT->login_info() ?>
-                                </li>
-                              </ul>
-                        <!-- ******* esto estaba hecho por Martin ******* -->
+                  <!-- Botones personalizados del Usuario -->
+                      <?php include 'includes/botones_usuario.php'?>
+                  <!-- Fin de los botones personalizados del Usuario -->
+                  <!-- Inicio info del login del usuario -->
+                  <ul class="nav pull-right">
+                      <li class="dropdown">
+                          <?php echo $OUTPUT->login_info() ?>
+                      </li>
+                  </ul>
             </div>
         </div>
     </nav>
@@ -193,7 +178,8 @@ COURSE
             <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
     <?php } ?>
     <!-- End Google Analytics -->
-
+    <script src="<?php echo $CFG->wwwroot."/theme/udcessential/javascript/bloques.js";?>"></script>
+    
     <script type="text/javascript">
         jQuery(document).ready(function() {
             var offset = 220;
