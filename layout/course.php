@@ -48,7 +48,7 @@ $blockclass = 'span4';
 
 if (!($hassidepre AND $hassidepost)) {
     // Two columns.
-    $contentclass = 'span9';
+    $contentclass = 'span12';
     $blockclass = 'span3';
     if (!$PAGE->user_is_editing()) {
         if (((!$hassidepre) && (!$rtl)) ||

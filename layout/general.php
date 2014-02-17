@@ -184,6 +184,7 @@ GENERAL
 	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
+<script src="<?php echo $CFG->wwwroot."/theme/udcessential/javascript/bloques.js";?>"></script>
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
