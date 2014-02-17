@@ -74,8 +74,9 @@ REPORT
             </a>
             <div class="nav-collapse collapse">
                 <?php if($USER->username != 'guest'){
-                    echo $OUTPUT->custom_menu(); 
+                    //echo $OUTPUT->custom_menu(); 
                 }?>
+                <?php include 'includes/botones_usuario.php'?>
                 <ul class="nav pull-right">
                     <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
                     <li class="dropdown"><?php echo $OUTPUT->login_info() ?></li>
@@ -127,6 +128,7 @@ REPORT
 	<?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
 <?php } ?>
 <!-- End Google Analytics -->
+<script src="<?php echo $CFG->wwwroot."/theme/udcessential/javascript/bloques.js";?>"></script>
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
