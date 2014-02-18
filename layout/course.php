@@ -111,7 +111,7 @@ COURSE
             </a>
             <div class="nav-collapse collapse">
                 <?php if($USER->username != 'guest'){
-                    //echo $OUTPUT->custom_menu();
+                    echo $OUTPUT->custom_menu();
                 } ?>
                   <!-- Botones personalizados del Usuario -->
                       <?php include 'includes/botones_usuario.php'?>
