@@ -150,7 +150,10 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?> >
-    
+
+<!-- muestro en que layout estoy 
+<script>alert("layout FRONTPAGE!!");</script>-->
+
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
     
     <div id="cabecera" class="row-fluid">
@@ -168,14 +171,14 @@ echo $OUTPUT->doctype() ?>
                             <span class="icon-bar"></span>
                         </a>
                         <div class="nav-collapse collapse">
-                            <!-- Botones personalizados del Usuario -->
-                                <?php include 'includes/botones_usuario.php'?>
-                            <!-- Fin de los botones personalizados del Usuario -->
-                            <?php if ($hascustommenu) {
+                            <?php //if ($hascustommenu) {
                                 if($USER->username != 'guest'){
                                     echo $custommenu;
                                 }
-                            } ?>
+                            //} ?>
+                            <!-- Botones personalizados del Usuario -->
+                                <?php include 'includes/botones_usuario.php'?>
+                            <!-- Fin de los botones personalizados del Usuario -->
                             <!-- Inicio info del login del usuario -->
                             <ul class="nav pull-right">
                                 <li class="dropdown">

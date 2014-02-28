@@ -78,21 +78,13 @@ echo $OUTPUT->doctype() ?>
     <!-- Google web fonts -->
     <?php //require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
-    <?php //require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
+    <?php //require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>   
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
-<!--
-<br>
-<br>
-<br>
-<br>
-COURSE
-<br>
-<br>
-<br>
--->
+<!-- muestro en que layout estoy 
+<script>alert("layout COURSES!!");</script>-->
     
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 

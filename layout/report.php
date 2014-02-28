@@ -48,16 +48,10 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
-<!--
-<br>
-<br>
-<br>
-<br>
-REPORT
-<br>
-<br>
-<br>
--->
+
+<!-- muestro en que layout estoy 
+<script>alert("layout REPORT!!");</script> -->
+
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>

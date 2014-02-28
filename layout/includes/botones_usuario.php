@@ -10,7 +10,7 @@
         </div>
     </ul>
     <ul class="nav">
-    <div class="btn-toolbar" id="bloques"></div>
+        <div class="btn-toolbar" id="bloques"></div>
     </ul>
 <?php }?>
 <!-- Fin de los botones del usuario -->

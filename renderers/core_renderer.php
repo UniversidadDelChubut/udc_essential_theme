@@ -142,7 +142,7 @@
  
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
  			//$branch->add('<em><i class="icon-user"></i>'.get_string('profile').'</em>',new moodle_url('/user/profile.php'),get_string('profile'));
- 			$branch->add('<em><i class="icon-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php'),get_string('pluginname', 'block_calendar_month'));
+ 			$branch->add('<em><i class="icon-calendar"></i>'.get_string('pluginname', 'block_calendar_month').'</em>',new moodle_url('/calendar/view.php?view=month'),get_string('pluginname', 'block_calendar_month'));
  			$branch->add('<em><i class="icon-envelope"></i>'.get_string('pluginname', 'block_messages').'</em>',new moodle_url('/message/index.php'),get_string('pluginname', 'block_messages'));
  			$branch->add('<em><i class="icon-certificate"></i>'.get_string('badges').'</em>',new moodle_url('/badges/mybadges.php'),get_string('badges'));
  			$branch->add('<em><i class="icon-file"></i>'.get_string('privatefiles', 'block_private_files').'</em>',new moodle_url('/user/files.php'),get_string('privatefiles', 'block_private_files'));
@@ -314,7 +314,10 @@
                 //$loggedinas = "<p style='color: white; font-size: 12pt;'><strong>Usuario Invitado</strong></p>";
                 if (!$loginpage && $withlinks) {
                     //$loggedinas .= " (<a href=\"$loginurl\">".get_string('login').'</a>)';
-                    $loggedinas = "<a href=\"$loginurl\"><i class=\"icon icon-white icon-home\"></i> Invitado</a>";
+                    //$loggedinas = "<a href=\"$loginurl\"><i class=\"icon icon-white icon-signout\"></i> Salir/Entrar</a>";
+                    //declaro el link de deslogueo
+                    $logouturl = $CFG->wwwroot."/login/logout.php?sesskey=".sesskey();
+                    $loggedinas = "<a href=\"$logouturl\"><i class=\"icon icon-white icon-signout\"></i> Salir</a>";
                 }
             } else if (is_role_switched($course->id)) { // Has switched roles
                 $rolename = '';

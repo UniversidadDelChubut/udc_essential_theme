@@ -47,17 +47,10 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
-<!--
-<br>
-<br>
-<br>
-<br>
-LOGIN
-<br>
-<br>
-<br>
--->
-    
+
+<!-- muestro en que layout estoy 
+<script>alert("layout LOGIN!!");</script> -->
+
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
@@ -76,10 +69,10 @@ LOGIN
                <?php if($USER->username != 'guest'){
                          echo $OUTPUT->custom_menu(); 
                }?>            
-            <ul class="nav pull-right">
-            <li><?php //echo $OUTPUT->page_heading_menu(); ?></li>
-            <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
-            </ul>
+               <ul class="nav pull-right">
+                    <li><?php //echo $OUTPUT->page_heading_menu(); ?></li>
+                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+               </ul>
             </div>
         </div>
     </nav>
