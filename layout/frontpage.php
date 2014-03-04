@@ -147,18 +147,19 @@ echo $OUTPUT->doctype() ?>
     <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/udcessential/style/css_agregadas.css" />
     <script type="text/javascript" src="<?php echo $CFG->wwwroot;?>/theme/udcessential/javascript/funciones_agregadas.js"></script>
     <!-- fin de agregar archivos -->
-        
+    <!-- SCRIPT para el modal del invitado -->
     <script type="text/javascript">
-            $(document).ready(function(){
-                    $("#myModal").modal('show');
-            });
+        $(document).ready(function(){
+           $("#myModal").modal('show');
+        });
     </script>
+    <!-- FIN de SCRIPT del modal del invitado -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?> >
 
 <!-- muestro en que layout estoy 
-<script>alert("layout FRONTPAGE!!");</script>-->
+<script>alert("layout FRONTPAGE!!");</script> -->
 
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
     
@@ -201,7 +202,7 @@ echo $OUTPUT->doctype() ?>
     
     <!-- Inicio del div que contiene la pagina principal -->
     <div id="page" class="container-fluid"> <!--style="border: black 1px solid"> -->
-        
+        <!-- Si el usuario es INVITADO muestro MODAL -->
         <?php if($USER->username == 'guest'): ?>
         <?php $loginUrl = "$CFG->wwwroot\login\index.php";
               //$registrarseUrl="$CFG->wwwroot\login\signup.php";
@@ -230,6 +231,7 @@ echo $OUTPUT->doctype() ?>
             </div>
         </div>
         <?php endif;?>
+        <!-- FIN del modal si el usuario es INVITADO -->
         
         <!-- Inicio del boton derecho de AYUDA -->
         <div style="float: right;">

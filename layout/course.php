@@ -78,13 +78,24 @@ echo $OUTPUT->doctype() ?>
     <!-- Google web fonts -->
     <?php //require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
-    <?php //require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>   
+    <?php //require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>  
+    <!-- agrego el Javascript y los CSS agregados -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/udcessential/style/css_agregadas.css" />
+    <script type="text/javascript" src="<?php echo $CFG->wwwroot;?>/theme/udcessential/javascript/funciones_agregadas.js"></script>
+    <!-- fin de agregar archivos -->
+    <!-- SCRIPT para el modal del invitado -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#myModal").modal('show');
+        });
+    </script>
+    <!-- FIN de SCRIPT del modal del invitado -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <!-- muestro en que layout estoy 
-<script>alert("layout COURSES!!");</script>-->
+<script>alert("layout COURSES!!");</script> -->
     
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
@@ -118,7 +129,38 @@ echo $OUTPUT->doctype() ?>
         </div>
     </nav>
 </header>
-
+    
+    <!-- Si el usuario es INVITADO muestro MODAL -->
+        <?php if($USER->username == 'guest'): ?>
+        <?php $loginUrl = "$CFG->wwwroot\login\index.php";
+              //$registrarseUrl="$CFG->wwwroot\login\signup.php";
+              $registrarseUrl="http://udc.edu.ar/inscripcion";
+              ?>
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+                        <h4 class="modal-title">Usuario Invitado</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Usted a entrado como un "Usuario Invitado".</p>
+                        <p>Puede observar el contenido completo del curso que así lo habilite,<br>
+                        pero no podrá participar en él. </p>
+                        <p>Si usted quiere realizar algunos de éstos cursos, por favor identifiquese como usuario
+                            en <a class="btn btn-default" href="<?php echo $loginUrl; ?>">Acceso al portal</a>, o regístrese en el siguiente link 
+                            <a class="btn btn-default" href="<?php echo $registrarseUrl; ?>">Registrarse</a>.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Continuar como invitado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif;?>
+        <!-- FIN del modal si el usuario es INVITADO -->
+        
     <!-- Start Main Regions -->
     <div id="page" class="container-fluid">
         <div id="page-content" class="row-fluid">
