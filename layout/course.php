@@ -130,34 +130,9 @@ echo $OUTPUT->doctype() ?>
     </nav>
 </header>
     
-    <!-- Si el usuario es INVITADO muestro MODAL -->
+        <!-- Si el usuario es INVITADO muestro MODAL -->
         <?php if($USER->username == 'guest'): ?>
-        <?php $loginUrl = "$CFG->wwwroot\login\index.php";
-              //$registrarseUrl="$CFG->wwwroot\login\signup.php";
-              $registrarseUrl="http://udc.edu.ar/inscripcion";
-              ?>
-        <div id="myModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
-                        <h4 class="modal-title">Usuario Invitado</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Usted a entrado como un "Usuario Invitado".</p>
-                        <p>Puede observar el contenido completo del curso que así lo habilite,<br>
-                        pero no podrá participar en él. </p>
-                        <p>Si usted quiere realizar algunos de éstos cursos, por favor identifiquese como usuario
-                            en <a class="btn btn-default" href="<?php echo $loginUrl; ?>">Acceso al portal</a>, o regístrese en el siguiente link 
-                            <a class="btn btn-default" href="<?php echo $registrarseUrl; ?>">Registrarse</a>.
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">Continuar como invitado</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <?php require_once(dirname(__FILE__).'/includes/modal_invitado.php'); ?>
         <?php endif;?>
         <!-- FIN del modal si el usuario es INVITADO -->
         
