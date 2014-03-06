@@ -43,13 +43,13 @@ $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->them
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
 $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
-$regionclass = 'span9';
-$contentclass = 'span8';
+$regionclass = 'span12';
+$contentclass = 'span12';
 $blockclass = 'span4';
 
 if (!($hassidepre AND $hassidepost)) {
     // Two columns.
-    $contentclass = 'span9';
+    $contentclass = 'span12';
     $blockclass = 'span3';
     if (!$PAGE->user_is_editing()) {
         if (((!$hassidepre) && (!$rtl)) ||
@@ -88,8 +88,8 @@ echo $OUTPUT->doctype() ?>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
-<!-- muestro en que layout estoy 
-<script>alert("layout GENERAL!!");</script> -->
+<!-- muestro en que layout estoy -->
+<script>alert("layout GENERAL!!");</script> 
     
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 

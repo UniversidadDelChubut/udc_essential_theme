@@ -62,8 +62,10 @@ if (!($hassidepre AND $hassidepost)) {
     } else {
         if ((!$hassidepre) && ($rtl)) {
             // Fill complete area when editing on, RTL and no side pre.
-            $contentclass = 'span8';
-            $blockclass = 'span4';
+            //$contentclass = 'span8';
+            //$blockclass = 'span4';
+            $contentclass = 'span11';
+            $blockclass = 'span1';
         }
     }
 }
@@ -113,7 +115,7 @@ echo $OUTPUT->doctype() ?>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-                <?php if($USER->username != 'guest'){
+                <?php if(isguestuser()){
                     echo $OUTPUT->custom_menu();
                 } ?>
                   <!-- Botones personalizados del Usuario -->

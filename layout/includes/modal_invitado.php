@@ -13,9 +13,9 @@
                         <p>Usted ha entrado como un "Usuario Invitado".</p>
                         <p>Puede observar el contenido completo del curso que así lo habilite,<br>
                         pero no podrá participar en él. </p>
-                        <p>Si usted quiere realizar algunos de estos cursos, por favor identifíquese como usuario
-                            en <a href="<?php echo $loginUrl; ?>">Acceso al portal</a>, o regístrese en el siguiente link 
-                            <a href="<?php echo $registrarseUrl; ?>">Registrarse</a>.
+                        <p>Si usted quiere realizar algunos de estos cursos, por favor 
+                            <a href="<?php echo $loginUrl; ?>">identifíquese como usuario</a> o 
+                            <a href="<?php echo $registrarseUrl; ?>">regístrese</a>.
                         </p>
                     </div>
                     <div class="modal-footer">

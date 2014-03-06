@@ -179,7 +179,7 @@ echo $OUTPUT->doctype() ?>
                         </a>
                         <div class="nav-collapse collapse">
                             <?php //if ($hascustommenu) {
-                                if($USER->username != 'guest'){
+                                if(!isguestuser()){
                                     echo $custommenu;
                                 }
                             //} ?>
@@ -203,7 +203,7 @@ echo $OUTPUT->doctype() ?>
     <!-- Inicio del div que contiene la pagina principal -->
     <div id="page" class="container-fluid"> <!--style="border: black 1px solid"> -->
         <!-- Si el usuario es INVITADO muestro MODAL -->
-        <?php if($USER->username == 'guest'): ?>
+        <?php if(isguestuser()): ?>
             <?php require_once(dirname(__FILE__).'/includes/modal_invitado.php'); ?>
         <?php endif;?>
         <!-- FIN del modal si el usuario es INVITADO -->

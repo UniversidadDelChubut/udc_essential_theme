@@ -31,7 +31,7 @@ $hasboringlayout = (empty($PAGE->theme->settings->layout)) ? false : $PAGE->them
 $hasanalytics = (empty($PAGE->theme->settings->useanalytics)) ? false : $PAGE->theme->settings->useanalytics;
 $hassidepre = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-pre', $OUTPUT));
 $hassidepost = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('side-post', $OUTPUT));
-$contentclass = 'span8';
+$contentclass = 'span12';
 $blockclass = 'span4';
 
 echo $OUTPUT->doctype() ?>
@@ -49,8 +49,8 @@ echo $OUTPUT->doctype() ?>
 
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
-<!-- muestro en que layout estoy 
-<script>alert("layout REPORT!!");</script> -->
+<!-- muestro en que layout estoy -->
+<script>alert("layout REPORT!!");</script> 
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
@@ -68,7 +68,7 @@ echo $OUTPUT->doctype() ?>
             </a>
             <div class="nav-collapse collapse">
                 <?php if($USER->username != 'guest'){
-                    //echo $OUTPUT->custom_menu(); 
+                    echo $OUTPUT->custom_menu(); 
                 }?>
                 <?php include 'includes/botones_usuario.php'?>
                 <ul class="nav pull-right">
@@ -83,7 +83,7 @@ echo $OUTPUT->doctype() ?>
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
 	<div id="page-content" class="row-fluid">
-        <div id="region-main" class="span9<?php if ($ltr) { echo ' pull-right'; } ?>">
+        <div id="region-main" class="span12<?php if ($ltr) { echo ' pull-right'; } ?>">
             <section id="region-main" class="row-fluid">
 				<div id="page-navbar" class="clearfix">
 					<nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
