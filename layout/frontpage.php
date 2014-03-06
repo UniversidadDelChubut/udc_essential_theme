@@ -207,6 +207,7 @@ echo $OUTPUT->doctype() ?>
             <?php require_once(dirname(__FILE__).'/includes/modal_invitado.php'); ?>
         <?php endif;?>
         <!-- FIN del modal si el usuario es INVITADO -->
+        
         <!-- Inicio del boton derecho de AYUDA -->
         <div style="float: right;">
             <div style="position: fixed;">

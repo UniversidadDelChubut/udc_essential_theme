@@ -47,7 +47,7 @@ $hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->re
 
 	<div class="footerlinks row-fluid">
     	<hr>
-    	<p class="helplink"><?php echo page_doc_link(get_string('moodledocslink')); ?></p>
+    	<!-- <p class="helplink"><?php //echo page_doc_link(get_string('moodledocslink')); ?></p> -->
     <?php if ($hascopyright) {
         echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
     } ?>
