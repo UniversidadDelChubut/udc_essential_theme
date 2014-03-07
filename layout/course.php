@@ -115,7 +115,7 @@ echo $OUTPUT->doctype() ?>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-                <?php if(isguestuser()){
+                <?php if(!isguestuser()){
                     echo $OUTPUT->custom_menu();
                 } ?>
                   <!-- Botones personalizados del Usuario -->
@@ -150,9 +150,14 @@ echo $OUTPUT->doctype() ?>
                     <?php } ?>
                             <section id="region-main" class="row-fluid">
                                 <div id="page-navbar" class="clearfix">
-                                                <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-                                                <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
-                                                </div>
+                                    <nav class="breadcrumb-button">
+                                        <?php echo $OUTPUT->page_heading_button(); ?>
+                                        <!--<a href="http://localhost/moodle/course/view.php?id=2&sesskey=<?php echo sesskey() ?>&edit=on" class="btn btn-success" title="Activar edición">
+                                            <i class="icon-edit icon-white"></i>
+                                        </a>-->
+                                    </nav>
+                                    <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+                                </div>
                                 <?php
                                 echo $OUTPUT->course_content_header();
                                 echo $OUTPUT->main_content();
