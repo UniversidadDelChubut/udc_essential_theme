@@ -18,5 +18,20 @@
 overflow-y: auto;
 max-height: 350px;
 min-width: 350px;
+}
 
 .bloque-insertar .block {border: none;}
+
+.bloque-insertar .block .calendartable {min-height: 120px;}
+
+.navbar-inner {
+    line-height: 15px;
+}
+
+.calendar-event-panel .yui3-overlay-content h2.eventtitle {
+    font-size: 17px;
+}
+
+.calendar-event-panel .eventcontent{
+    font-size: 14px;
+}
