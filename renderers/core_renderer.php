@@ -236,16 +236,19 @@
         $url->param('sesskey', sesskey());    
         if ($this->page->user_is_editing()) {
             $url->param('edit', 'off');
+            //$btn = 'btn-danger';  //opcion original
             $btn = 'btn-danger';
             $title = get_string('turneditingoff');
-            $icon = 'icon-off';
+            $icon = 'icon-edit';
+            $TextoBoton = " Desactivar Edición ";
         } else {
             $url->param('edit', 'on');
             $btn = 'btn-success';
             $title = get_string('turneditingon');
-            $icon = 'icon-edit';
+            $icon = 'icon-edit';            
+            $TextoBoton = " Activar Edición";
         }
-        return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon.' icon-white')).
+        return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon.' icon-white')).$TextoBoton.
                html_writer::end_tag('i'), array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
     }
     

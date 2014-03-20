@@ -26,8 +26,12 @@ function message_count_unread_messages_1($user1=null, $user2=null) {
     <ul class="nav">
         <div class="nav-collapse collapse" style="margin: 0">
             <div class="btn-group" id="btn_course_links">
-                <!-- <a href="<?php //echo $CFG->wwwroot;?>" class="btn btn-info" title="Inicio"><i class="icon-white icon-home"></i></a>  -->
-                <a href="<?php echo $CFG->wwwroot."/calendar/view.php?view=month";?>" class="btn btn-info" title="Próximos eventos"><i class="icon-white icon-calendar"></i></a>
+                <!-- <a href="<?php //echo $CFG->wwwroot;?>" class="btn btn-info" title="Inicio"><i class="icon-white icon-home"></i></a>  
+                <a href="<?php //echo $CFG->wwwroot."/calendar/view.php?view=month";?>" class="btn btn-info" title="Próximos eventos"><i class="icon-white icon-calendar"></i></a>-->
+                <?php 
+                    
+                ?>
+                <a href="<?php echo $CFG->wwwroot."/user/index.php?contextid=".$contextid;?>" class="btn btn-info" title="Próximos eventos"><i class="icon-white icon-user"></i></a>
                 <a href="<?php echo $CFG->wwwroot."/message/index.php";?>" class="btn btn-info" title="Mensajes"><i class="icon-white icon-envelope"></i>
                 <?php if($cant>0):?>
                     <span class="badge" style='background-color: red'><?php echo $cant; ?></span> 

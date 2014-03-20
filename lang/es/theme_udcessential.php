@@ -79,7 +79,7 @@ $string['perf_max'] = 'Detallado';
 $string['perf_min'] = 'Mínimo';
 $string['visibleadminonly'] = 'Los bloques colocados en esta área serán vistos únicamente por los administradores';
 
-/* My Dashboard custommenu dropdown */
+/* Cadenas que faltaban incorporar */
 $string['mydashboard'] = 'Mis Opciones';
 $string['mycourses'] = 'Mis Cursos';
 $string['noenrolments'] = 'No estás inscripto en ningún curso';

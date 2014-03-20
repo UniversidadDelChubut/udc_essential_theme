@@ -133,10 +133,12 @@ echo $OUTPUT->doctype() ?>
 </header>
     
         <!-- Si el usuario es INVITADO muestro MODAL -->
-        <?php if($USER->username == 'guest'): ?>
+        <?php if(isguestuser()): ?>
             <?php require_once(dirname(__FILE__).'/includes/modal_invitado.php'); ?>
         <?php endif;?>
         <!-- FIN del modal si el usuario es INVITADO -->
+        
+        <?php //var_dump($CFG); ?>
         
     <!-- Start Main Regions -->
     <div id="page" class="container-fluid">
@@ -152,9 +154,6 @@ echo $OUTPUT->doctype() ?>
                                 <div id="page-navbar" class="clearfix">
                                     <nav class="breadcrumb-button">
                                         <?php echo $OUTPUT->page_heading_button(); ?>
-                                        <!--<a href="http://localhost/moodle/course/view.php?id=2&sesskey=<?php echo sesskey() ?>&edit=on" class="btn btn-success" title="Activar edición">
-                                            <i class="icon-edit icon-white"></i>
-                                        </a>-->
                                     </nav>
                                     <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
                                 </div>
