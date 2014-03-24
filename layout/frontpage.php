@@ -25,7 +25,7 @@
  */
 
 //instancio las variables globales
-global $USER, $SESSION; 
+global $USER, $SESSION, $CFG; 
 
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
     
@@ -162,7 +162,7 @@ echo $OUTPUT->doctype() ?>
 <script>alert("layout FRONTPAGE!!");</script> -->
 
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
-    
+
     <div id="cabecera" class="row-fluid">
         <div id="caja-flotante">
             <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
@@ -201,25 +201,22 @@ echo $OUTPUT->doctype() ?>
     </div>
     
     <!-- Inicio del div que contiene la pagina principal -->
-    <div id="page" class="container-fluid"> <!--style="border: black 1px solid"> -->
+    <div id="page" class="container-fluid">
         <!-- Si el usuario es INVITADO muestro MODAL -->
         <?php if(isguestuser()): ?>
             <?php require_once(dirname(__FILE__).'/includes/modal_invitado.php'); ?>
         <?php endif;?>
         <!-- FIN del modal si el usuario es INVITADO -->
         
-        <!-- Inicio del boton derecho de AYUDA -->
+        <!-- Inicio del boton derecho de AYUDA GENERAL -->
+        <?php if(!(isloggedin()) || isguestuser()):?> <!-- si no esta logueado o si es el "invitado" lo muestro -->
         <div style="float: right;">
             <div style="position: fixed;">
-                <a href="http://udc.edu.ar" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt='Ayuda' title="Ayuda" width="50px" height="50px" style="padding-left: 15%" ></a>
+                <a href="http://udc.edu.ar" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
             </div>
         </div>
-        <!-- Fin del boton derecho de AYUDA -->
-        
-        <!-- <div align="center" style="font-size: 15pt;"> 
-            <img src="/moodle/theme/udcessential/pix/udc_logo.png" alt="Logo UDC" width="30%" height="50%">
-            <p style="width: 50%; height: 100%"><strong>Bienvenidos a nuestro portal universitario.</strong></p>
-        </div> -->
+        <?php endif;?>
+        <!-- Fin del boton derecho de AYUDA GENERAL -->
         
         <!-- Inicio del div que contiene las ALERTAS, SLIDES y SPOTS -->
         <div class="row-fluid">
@@ -401,7 +398,7 @@ echo $OUTPUT->doctype() ?>
                 <?php //var_dump($USER)?>
                 <br><br>
                 <?php $nick = $USER->firstname.", ".$USER->lastname ?>
-                <!-- INICIO del CODIGO del CHAT de ScrollBack -->
+                <!-- INICIO del CODIGO del CHAT de ScrollBack 
                     <script>
                         window.scrollback = {
                          streams:["UniversidadDelChubut"],
@@ -422,7 +419,7 @@ echo $OUTPUT->doctype() ?>
                           (document,'script',location.protocol=="https:"?"https:":"http:"+'//scrollback.io')
                         );
                     </script>
-
+                    -->
                 <!-- FIN del CODIGO del CHAT de ScrollBack -->
             <?php endif;?>
             <?php /*if (is_siteadmin()) { ?>

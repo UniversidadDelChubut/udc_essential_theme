@@ -108,7 +108,7 @@ echo $OUTPUT->doctype() ?>
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"> </i>&nbsp;UDC</a>
-            <a class="brand" href="#"><?php echo " - ".$COURSE->fullname; ?></a>
+            <a class="brand" href="#"><?php echo " -  ".$COURSE->shortname; ?></a> <!-- $COURSE->fullname; -->
             <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -136,9 +136,7 @@ echo $OUTPUT->doctype() ?>
         <?php if(isguestuser()): ?>
             <?php require_once(dirname(__FILE__).'/includes/modal_invitado.php'); ?>
         <?php endif;?>
-        <!-- FIN del modal si el usuario es INVITADO -->
-        
-        <?php //var_dump($CFG); ?>
+        <!-- FIN del modal si el usuario es INVITADO -->                
         
     <!-- Start Main Regions -->
     <div id="page" class="container-fluid">
@@ -161,7 +159,7 @@ echo $OUTPUT->doctype() ?>
                                 echo $OUTPUT->course_content_header();
                                 echo $OUTPUT->main_content();
                                 echo $OUTPUT->course_content_footer();
-                                ?>
+                                ?>                                
                             </section>
                         </div>
                     <?php 
