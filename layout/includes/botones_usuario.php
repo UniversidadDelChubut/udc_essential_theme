@@ -61,7 +61,22 @@
             } 
     } //fin function "identificar"
 ?>
-<!-- FUNCION identificar usuario (student, teacher or admin) -->
+<!-- FIN FUNCION identificar usuario (student, teacher or admin) -->
+
+<!-- FUNCION generar cadena aleatoria -->
+<?php
+    function cadenaAleatoria(){
+        $caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"; //posibles caracteres a usar
+        $numerodeletras=6; //numero de letras para generar el texto
+        $cadena = ""; //variable para almacenar la cadena generada
+        for($i=0;$i<$numerodeletras;$i++){
+            $cadena .= substr($caracteres,rand(0,strlen($caracteres)),1); /*Extraemos 1 caracter de los caracteres 
+            entre el rango 0 a Numero de letras que tiene la cadena */
+        }
+        return $cadena;
+    }
+?>
+<!-- FIN FUNCION generar cadena aleatoria -->
 
 <!-- Si el usuario esta logueado y no es el INVITADO, muestro los botones -->
 <?php if (isloggedin()&&(!isguestuser())) {?>
@@ -84,19 +99,30 @@
                     
                     if($isStudent){
                         $title = 'Ayuda al estudiante';
-                        $href = 'http:\\udc.edu.ar\s';
+                        $href = 'http://localhost/phpmyfaq?u=onmula';
                         $icon = 'icon-question-sign';
+                        $FaqUserName = 'alumno';
+                        $FaqUserPass = 'alumno';
                     }else if($isTeacher){
                         $title = 'Ayuda al docente';
-                        $href = 'http:\\udc.edu.ar\t';
+                        $href = 'http://localhost/phpmyfaq?u='.cadenaAleatoria();
                         $icon = 'icon-book';
-                    }                    
-                    
+                        $FaqUserName = 'docente';
+                        $FaqUserPass = 'docente';
+                    }
                 ?>
                 <!-- <a href="<?php //echo $CFG->wwwroot."/user/index.php?contextid=".$contextid;?>" class="btn btn-info" title="Próximos eventos"><i class="icon-white icon-user"></i></a> -->
                 <?php if(($isStudent || $isTeacher)):?>
-                    <a href="<?php echo $href ?>" class="btn btn-info" title="<?php echo $title ?>" target="_blank">
-                    <i class="icon-white <?php echo $icon ?>"></i></a>
+                    <form action="http://localhost/phpmyfaq/" method="post" accept-charset="utf-8">
+                        <input type="hidden" name="faqloginaction" value="login">
+                        <input type="hidden" name="faqusername" id="faqusername" required="required" value="<?php echo $FaqUserName ?>">
+                        <input type="hidden" name="faqpassword" id="faqpassword" required="required" value="<?php echo $FaqUserPass ?>">
+                        <button class="btn btn-info" type="submit" title="<?php echo $title ?>">
+                            <i class="icon-white <?php echo $icon ?>"></i>
+                        </button>
+                    </form>
+                    <!--<a href="<?php //echo $href ?>" class="btn btn-info" title="<?php //echo $title ?>" target="_blank">
+                    <i class="icon-white <?php //echo $icon ?>"></i></a> -->
                 <?php endif;?>
                 <a href="<?php echo $CFG->wwwroot."/message/index.php";?>" class="btn btn-info" title="Mensajes"><i class="icon-white icon-envelope"></i>
                 <?php if($cant>0):?>
