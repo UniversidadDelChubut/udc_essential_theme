@@ -270,7 +270,7 @@ echo $OUTPUT->doctype() ?>
                 <?php } ?>
             </div>
             <!-- End Alerts -->
-            
+                  
             <!-- Si el usuario NO esta logueado, muestro RSS, SPOTS y SLIDES -->
             <?php if ($USER->id == 0):?>
                 <!-- Inicio RSS y los dos SLIDES -->

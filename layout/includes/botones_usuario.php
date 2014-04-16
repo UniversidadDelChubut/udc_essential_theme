@@ -87,6 +87,10 @@
                 <a href="<?php //echo $CFG->wwwroot."/calendar/view.php?view=month";?>" class="btn btn-info" title="Próximos eventos"><i class="icon-white icon-calendar"></i></a>-->
                 <?php 
                     global $USER, $COURSE;
+                    //guardo los datos del usuario de moodle para enviarlos al FAQ
+                    $moodleUserName = $USER->firstname.", ".$USER->lastname; //guardo nombre y apellido
+                    $moodleUserMail = $USER->email;//guardo el mail
+
                     $currentcontext = $this->page->context->get_course_context(false);
                     $contextid=$currentcontext->id;
                     
@@ -97,15 +101,17 @@
                     $isStudent = current(get_user_roles($cContext, $USER->id))->shortname=='student'? true : false;
                     $isTeacher = current(get_user_roles($cContext, $USER->id))->shortname=='editingteacher'? true : false;
                     
+                    //Host donde esta alojado el PhpMyFAQ
+                    $host = 'http://localhost/phpmyfaq'; //CAMBIAR cuando quede fijo, ej: http://test.udc.edu.ar/faq
                     if($isStudent){
                         $title = 'Ayuda al estudiante';
-                        $href = 'http://localhost/phpmyfaq?u=onmula';
+                        $href = $host.'?u=onmula';
                         $icon = 'icon-question-sign';
                         $FaqUserName = 'alumno';
                         $FaqUserPass = 'alumno';
                     }else if($isTeacher){
                         $title = 'Ayuda al docente';
-                        $href = 'http://localhost/phpmyfaq?u='.cadenaAleatoria();
+                        $href = $host.'?u='.cadenaAleatoria();
                         $icon = 'icon-book';
                         $FaqUserName = 'docente';
                         $FaqUserPass = 'docente';
@@ -117,6 +123,8 @@
                         <input type="hidden" name="faqloginaction" value="login">
                         <input type="hidden" name="faqusername" id="faqusername" required="required" value="<?php echo $FaqUserName ?>">
                         <input type="hidden" name="faqpassword" id="faqpassword" required="required" value="<?php echo $FaqUserPass ?>">
+                        <input type="hidden" name="moodleUserName" id="moodleusername" required="required" value="<?php echo $moodleUserName ?>">
+                        <input type="hidden" name="moodleUserMail" id="moodleusermail" required="required" value="<?php echo $moodleUserMail ?>">
                         <button class="btn btn-info" type="submit" title="<?php echo $title ?>">
                             <i class="icon-white <?php echo $icon ?>"></i>
                         </button>
