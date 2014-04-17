@@ -119,7 +119,8 @@
                 ?>
                 <!-- <a href="<?php //echo $CFG->wwwroot."/user/index.php?contextid=".$contextid;?>" class="btn btn-info" title="Próximos eventos"><i class="icon-white icon-user"></i></a> -->
                 <?php if(($isStudent || $isTeacher)):?>
-                    <form action="http://localhost/phpmyfaq/" method="post" accept-charset="utf-8">
+                <div class="btn-group" style="margin-top: 0px">
+                    <form action="<?php echo $host ?>" method="post" accept-charset="utf-8">
                         <input type="hidden" name="faqloginaction" value="login">
                         <input type="hidden" name="faqusername" id="faqusername" required="required" value="<?php echo $FaqUserName ?>">
                         <input type="hidden" name="faqpassword" id="faqpassword" required="required" value="<?php echo $FaqUserPass ?>">
@@ -129,6 +130,7 @@
                             <i class="icon-white <?php echo $icon ?>"></i>
                         </button>
                     </form>
+                </div>
                     <!--<a href="<?php //echo $href ?>" class="btn btn-info" title="<?php //echo $title ?>" target="_blank">
                     <i class="icon-white <?php //echo $icon ?>"></i></a> -->
                 <?php endif;?>
