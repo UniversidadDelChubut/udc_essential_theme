@@ -1630,6 +1630,10 @@ width: 67%;
 	width: 220px;  //original 140px
 }
 
+div.fitemtitle{
+    	width: 220px;  //original 140px
+}
+
 .form-item .form-setting, 
 .form-item .form-description, 
 .mform .fitem .felement, 
