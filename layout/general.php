@@ -89,7 +89,7 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes(); ?>>
 
 <!-- muestro en que layout estoy 
-<script>alert("layout GENERAL!!");</script>  -->
+<script>alert("layout GENERAL!!");</script> -->
     
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 

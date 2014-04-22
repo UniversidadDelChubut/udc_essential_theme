@@ -1627,7 +1627,7 @@ width: 67%;
 .mform .fitem div.fitemtitle, 
 .userprofile dl.list dt, 
 .form-horizontal .control-label { 
-	width: 140px; 
+	width: 220px;  //original 140px
 }
 
 .form-item .form-setting, 
