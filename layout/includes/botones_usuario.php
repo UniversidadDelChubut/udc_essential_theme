@@ -102,7 +102,7 @@
                     $isTeacher = current(get_user_roles($cContext, $USER->id))->shortname=='editingteacher'? true : false;
                     
                     //Host donde esta alojado el PhpMyFAQ
-                    $host = 'http://social.udc.edu.ar/theme/udcessential/layout/includes/';
+                    $host = 'http://social.udc.edu.ar/moodle/theme/udcessential/layout/includes/';
                     //$host = 'http://localhost/phpmyfaq'; //CAMBIAR cuando quede fijo, ej: http://test.udc.edu.ar/faq
                     if($isStudent){
                         $title = 'Ayuda al estudiante';
