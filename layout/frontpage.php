@@ -212,7 +212,8 @@ echo $OUTPUT->doctype() ?>
         <?php if(!(isloggedin()) || isguestuser()):?> <!-- si no esta logueado o si es el "invitado" lo muestro -->
         <div style="float: right;">
             <div style="position: fixed;">
-                <a href="http://localhost/phpmyfaq" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
+                <?php $host = $CFG->wwwroot.'/theme/udcessential/layout/includes/ayudaGeneral.php'; ?>
+                <a href="<?php echo $host; ?>" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
             </div>
         </div>
         <?php endif;?>

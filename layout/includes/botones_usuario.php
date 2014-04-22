@@ -102,23 +102,25 @@
                     $isTeacher = current(get_user_roles($cContext, $USER->id))->shortname=='editingteacher'? true : false;
                     
                     //Host donde esta alojado el PhpMyFAQ
-                    $host = 'http://localhost/phpmyfaq'; //CAMBIAR cuando quede fijo, ej: http://test.udc.edu.ar/faq
+                    $host = 'http://social.udc.edu.ar/theme/udcessential/layout/includes/';
+                    //$host = 'http://localhost/phpmyfaq'; //CAMBIAR cuando quede fijo, ej: http://test.udc.edu.ar/faq
                     if($isStudent){
                         $title = 'Ayuda al estudiante';
-                        $href = $host.'?u=onmula';
+                        $href = $host.'ayudaEstudiante.php';
                         $icon = 'icon-question-sign';
-                        $FaqUserName = 'alumno';
-                        $FaqUserPass = 'alumno';
+                        //$FaqUserName = 'alumno';
+                        //$FaqUserPass = 'alumno';
                     }else if($isTeacher){
                         $title = 'Ayuda al docente';
-                        $href = $host.'?u='.cadenaAleatoria();
+                        $href = $host.'ayudaDocentes.php';
                         $icon = 'icon-book';
-                        $FaqUserName = 'docente';
-                        $FaqUserPass = 'docente';
+                        //$FaqUserName = 'docente';
+                        //$FaqUserPass = 'docente';
                     }
                 ?>
                 <!-- <a href="<?php //echo $CFG->wwwroot."/user/index.php?contextid=".$contextid;?>" class="btn btn-info" title="Próximos eventos"><i class="icon-white icon-user"></i></a> -->
                 <?php if(($isStudent || $isTeacher)):?>
+                <!--
                 <div class="btn-group" style="margin-top: 0px">
                     <form action="<?php echo $host ?>" method="post" accept-charset="utf-8">
                         <input type="hidden" name="faqloginaction" value="login">
@@ -130,7 +132,9 @@
                             <i class="icon-white <?php echo $icon ?>"></i>
                         </button>
                     </form>
-                </div>
+                </div> -->
+                    <a href="<?php echo $href ?>" class="btn btn-info" title="<?php echo $title ?>" target="_blank">
+                    <i class="icon-white <?php echo $icon ?>"></i></a>
                     <!--<a href="<?php //echo $href ?>" class="btn btn-info" title="<?php //echo $title ?>" target="_blank">
                     <i class="icon-white <?php //echo $icon ?>"></i></a> -->
                 <?php endif;?>

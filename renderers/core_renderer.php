@@ -243,7 +243,7 @@
             $TextoBoton = " Desactivar Edición ";
         } else {
             $url->param('edit', 'on');
-            $btn = 'btn-success';
+            $btn = 'btn-primary';
             $title = get_string('turneditingon');
             $icon = 'icon-edit';            
             $TextoBoton = " Activar Edición";
