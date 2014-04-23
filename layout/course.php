@@ -108,7 +108,7 @@ echo $OUTPUT->doctype() ?>
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
             <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"> </i>&nbsp;UDC</a>
-            <a class="brand" href="#"><?php echo " -  ".$COURSE->shortname; ?></a> <!-- $COURSE->fullname; -->
+            <!--<a class="brand" href="#"><?php //echo " -  ".$COURSE->shortname; ?></a>  $COURSE->fullname; -->
             <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
