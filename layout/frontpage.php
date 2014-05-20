@@ -286,7 +286,7 @@ echo $OUTPUT->doctype() ?>
                                 <div  style="padding-top: 10px; border-bottom: 5px #00adf7 solid;">
                                   <!-- start feedwind code -->
                                   <script type="text/javascript">
-                                       rssmikle_url="http://udc.edu.ar";
+                                       rssmikle_url="http://udc.edu.ar/wordpress/feed/";
                                        rssmikle_frame_width="100%";
                                        rssmikle_frame_height="297";
                                        rssmikle_target="_blank";

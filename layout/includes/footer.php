@@ -37,24 +37,24 @@ $hasfooterright = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->re
 ?>
 	<div class="row-fluid">
 		<?php
-            		echo $OUTPUT->essentialblocks($footerl, 'span4');
+            		// $OUTPUT->essentialblocks($footerl, 'span4');
 
-            		echo $OUTPUT->essentialblocks($footerm, 'span4');
+            		//echo $OUTPUT->essentialblocks($footerm, 'span4');
 
-            		echo $OUTPUT->essentialblocks($footerr, 'span4');
+            		//echo $OUTPUT->essentialblocks($footerr, 'span4');
 		?>
  	</div>
 
 	<div class="footerlinks row-fluid">
-    	<hr>
-    	<!-- <p class="helplink"><?php //echo page_doc_link(get_string('moodledocslink')); ?></p> -->
-    <?php if ($hascopyright) {
-        echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
-    } ?>
-    
-    <?php if ($hasfootnote) {
-        echo '<div class="footnote">'.$hasfootnote.'</div>';
-    } ?>
+            
+            <!-- <p class="helplink"><?php //echo page_doc_link(get_string('moodledocslink')); ?></p> -->
+            <?php if ($hascopyright) {
+                //echo '<p class="copy">&copy; '.date("Y").' '.$hascopyright.'</p>';
+            } ?>
+
+            <?php if ($hasfootnote) {
+                echo '<div class="footnote">'.$hasfootnote.'</div>';
+            } ?>
 	</div>
 	
 
