@@ -278,11 +278,12 @@ echo $OUTPUT->doctype() ?>
                 <div class="row-fluid">
                     <!-- INICIO del código RSS insertado -->
                     <div class="span3" align="center">
-                          <?php 
+                          <?php
+                            $hostAtestear = "www.google.com";
                             // Veo si puedo obtener la dir IP y compruebo si hay internet o no
-                            $conexion = gethostbyname("www.google.com");
+                            $conexion = gethostbyname($hostAtestear);
                             //Si devuelve la dir IP es porque tengo internet
-                            if ($conexion != "www.google.com"): ?>
+                            if ($conexion != $hostAtestear): ?>
                                 <div  style="padding-top: 10px; border-bottom: 5px #00adf7 solid;">
                                   <!-- start feedwind code -->
                                   <script type="text/javascript">
@@ -324,8 +325,8 @@ echo $OUTPUT->doctype() ?>
                                   <div style="width: 80%; height: 60%; position: static">
                                       <img src="/moodle/theme/udcessential/pix/udc_pagina.png" alt="Sin conexión">
                                   </div><br><br><br>
-                                  <p> <!-- style="padding-top: 120px;" -->No Hay Conexión a Internet.<br>
-                                      No se pueden mostrar las noticias vía RSS</p>
+                                  <p> <!-- style="padding-top: 120px;" --><?php echo "CON: ".$conexion ?><br>
+                                      <strong>No se pueden mostrar las noticias vía RSS</strong></p>
                               </div>
                             <?php endif; ?>
                     </div>
