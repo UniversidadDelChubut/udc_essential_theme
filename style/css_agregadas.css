@@ -35,3 +35,69 @@ min-width: 350px;
 .calendar-event-panel .eventcontent{
     font-size: 14px;
 }
+.calendar-controls {
+    color: black;
+    font-weight: bold;
+    background-color: #F5FA8C;
+    border-radius: 10px;        
+}
+.calendar-controls a {
+    text-decoration: none;
+    text-align: center !important;
+    font-size: 15pt;
+    padding-top: 20px;
+}
+.calendar_event_user{
+    background-color: #E3EB4E;
+}
+.calendar_event_user a{
+    text-decoration: none;
+}
+
+.pageContentUdc{
+    background-color: #FDFFBC;
+    border-radius: 30px;
+    padding: 30px 5px 15px 5px;
+}
+
+.linksRastro{
+    background-color: #30add1;
+    border-radius: 10px; 
+    margin-top: -10px;
+}
+.linksRastro a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+.linksRastro span{
+    color: white;    
+}
+
+.section-navigation span{
+    background-color: #30add1;
+    border-radius: 10px; 
+    margin-top: -10px;
+}
+.section-navigation span a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+#page-footer{
+    border-radius: 18px;
+}
+
+.form-buttons{
+    background-color: #EFF2AA;
+    border-radius: 10px;
+}
+#fitem_id_submitbutton{
+    background-color: #EFF2AA;
+    border-radius: 10px;
+}
+#fgroup_id_buttonar{
+    background-color: #EFF2AA;
+    border-radius: 10px;
+}
