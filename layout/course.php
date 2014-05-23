@@ -140,7 +140,7 @@ echo $OUTPUT->doctype() ?>
         
     <!-- Start Main Regions -->
     <div id="page" class="container-fluid">
-        <div id="page-content" class="row-fluid pageContentUdc">
+        <div id="page-content" class="row-fluid">
             <div id="<?php echo $regionbsid ?>" class="<?php echo $regionclass; ?>">
                 <div class="row-fluid">
                     <?php if ($hasboringlayout) { ?>
@@ -155,6 +155,7 @@ echo $OUTPUT->doctype() ?>
                                     </nav>
                                     <div class="breadcrumb-nav linksRastro"><?php echo $OUTPUT->navbar(); ?></div>
                                 </div>
+                                <br>
                                 <?php
                                 //echo "<div class='bodyCourse '>";
                                 echo $OUTPUT->course_content_header();                               
