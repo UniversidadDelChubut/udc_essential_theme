@@ -37,7 +37,7 @@ min-width: 350px;
 .calendar-controls {
     color: black;
     font-weight: bold;
-    background-color: #F3F1F1;//F5FA8C; gris del fondo de los cursos y demas; //gris del fondo de los cursos y demas
+    background-color: #F5FA8C;
     border-radius: 10px;        
 }
 .calendar-controls a {
@@ -47,7 +47,7 @@ min-width: 350px;
     padding-top: 20px;
 }
 .calendar_event_user{
-    background-color: #BFBFBF;
+    background-color: #E3EB4E;
 }
 .calendar_event_user a{
     text-decoration: none;
@@ -75,7 +75,7 @@ min-width: 350px;
     color: white;    
 }
 .topics{
-    background-color: #F3F1F1;//F5FA8C; gris del fondo de los cursos y demas; gris del fondo de los cursos y demas
+    background-color: #FDFFBC;
     margin-top: -20px !important;
 }
 
@@ -95,15 +95,15 @@ min-width: 350px;
 }
 
 .form-buttons{
-    background-color: #BFBFBF;
+    background-color: #EFF2AA;
     border-radius: 10px;
 }
 #fitem_id_submitbutton{
-    background-color: #BFBFBF;
+    background-color: #EFF2AA;
     border-radius: 10px;
 }
 #fgroup_id_buttonar{
-    background-color: #BFBFBF;
+    background-color: #EFF2AA;
     border-radius: 10px;
 }
 // cambios en el formulario del login
@@ -113,6 +113,6 @@ min-width: 350px;
     background-color: #FDFFBC;
 }
 .loginpanel h2{
-    background-color: #F3F1F1;//F5FA8C; gris del fondo de los cursos y demas; gris del fondo de los cursos y demas
+    background-color: #EFF2AA;
     margin: -1px;
 }

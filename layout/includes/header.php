@@ -91,9 +91,9 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 } ?>
                 </div> <!-- cierro el div donde se muestra el logo class="span4" -->
         
-            <div class="span6" style='text-align: center; font-size: 18px; color: black;
-                 padding-top: 10px;'>
-                <strong>Hola! Este es tu portal UDC, tu comunidad de aprendizaje, dinámico y colaborativo, ¡conectate y participá!</strong>
+            <div class="span6" style='text-align: center; font-size: 24px; color: black;
+                 padding-top: 25px;'>
+                <strong>Bienvenido a nuestro portal universitario!</strong>
             </div>
                     
                     
