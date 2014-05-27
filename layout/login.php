@@ -80,7 +80,7 @@ echo $OUTPUT->doctype() ?>
 
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
-	<div id="page-content" class="row-fluid pageContentUdc">
+	<div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">
             <?php
             echo $OUTPUT->course_content_header();

@@ -153,15 +153,12 @@ echo $OUTPUT->doctype() ?>
                                     <nav class="breadcrumb-button">
                                         <?php echo $OUTPUT->page_heading_button(); ?>
                                     </nav>
-                                    <div class="breadcrumb-nav linksRastro"><?php echo $OUTPUT->navbar(); ?></div>
+                                    <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
                                 </div>
-                                <br>
                                 <?php
-                                //echo "<div class='bodyCourse '>";
-                                echo $OUTPUT->course_content_header();                               
-                                echo $OUTPUT->main_content();                                
+                                echo $OUTPUT->course_content_header();
+                                echo $OUTPUT->main_content();
                                 echo $OUTPUT->course_content_footer();
-                                //echo "</div>";
                                 ?>                                
                             </section>
                         </div>

@@ -278,16 +278,15 @@ echo $OUTPUT->doctype() ?>
                 <div class="row-fluid">
                     <!-- INICIO del código RSS insertado -->
                     <div class="span3" align="center">
-                          <?php
-                            $hostAtestear = "www.google.com";
+                          <?php 
                             // Veo si puedo obtener la dir IP y compruebo si hay internet o no
-                            $conexion = gethostbyname($hostAtestear);
+                            $conexion = gethostbyname("www.google.com");
                             //Si devuelve la dir IP es porque tengo internet
-                            if ($conexion != $hostAtestear): ?>
+                            if ($conexion != "www.google.com"): ?>
                                 <div  style="padding-top: 10px; border-bottom: 5px #00adf7 solid;">
                                   <!-- start feedwind code -->
                                   <script type="text/javascript">
-                                       rssmikle_url="http://udc.edu.ar/wordpress/feed/";
+                                       rssmikle_url="http://udc.edu.ar";
                                        rssmikle_frame_width="100%";
                                        rssmikle_frame_height="297";
                                        rssmikle_target="_blank";
@@ -325,8 +324,8 @@ echo $OUTPUT->doctype() ?>
                                   <div style="width: 80%; height: 60%; position: static">
                                       <img src="/moodle/theme/udcessential/pix/udc_pagina.png" alt="Sin conexión">
                                   </div><br><br><br>
-                                  <p> <!-- style="padding-top: 120px;" --><?php echo "CON: ".$conexion ?><br>
-                                      <strong>No se pueden mostrar las noticias vía RSS</strong></p>
+                                  <p> <!-- style="padding-top: 120px;" -->No Hay Conexión a Internet.<br>
+                                      No se pueden mostrar las noticias vía RSS</p>
                               </div>
                             <?php endif; ?>
                     </div>
@@ -382,7 +381,7 @@ echo $OUTPUT->doctype() ?>
         </div>
         <div id="page-content" class="row-fluid">
             <div id="<?php echo $regionbsid ?>" class="span12">
-                <div id="region-main-udcessential">                    
+                <div id="region-main-udcessential">                            
                     <section id="region-main" class="span12 desktop-first-column">
                         <?php
                             echo $OUTPUT->course_content_header();
