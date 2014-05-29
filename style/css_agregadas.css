@@ -35,3 +35,34 @@ min-width: 350px;
 .calendar-event-panel .eventcontent{
     font-size: 14px;
 }
+
+.linksRastro{
+    background-color: #30add1;
+    border-bottom-left-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+    margin-top: -21px;
+    display: inline-block;
+    position: fixed;
+}
+.linksRastro a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;    
+}
+.linksRastro span{
+    color: white;    
+}
+.section-navigation span{
+    background-color: #30add1;
+    border-radius: 10px; 
+    margin-top: -10px;
+}
+.section-navigation span a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+#page-footer{
+    border-radius: 18px;
+}

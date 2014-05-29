@@ -213,7 +213,7 @@ echo $OUTPUT->doctype() ?>
         <div style="float: right;">
             <div style="position: fixed;">
                 <?php $host = $CFG->wwwroot.'/theme/udcessential/layout/includes/ayudaGeneral.php'; ?>
-                <a href="<?php echo $host; ?>" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
+                <a href="<?php echo $host; ?>" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.svg" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
             </div>
         </div>
         <?php endif;?>
@@ -278,15 +278,16 @@ echo $OUTPUT->doctype() ?>
                 <div class="row-fluid">
                     <!-- INICIO del código RSS insertado -->
                     <div class="span3" align="center">
-                          <?php 
+                          <?php
+                            $hostAtestear = "www.google.com";
                             // Veo si puedo obtener la dir IP y compruebo si hay internet o no
-                            $conexion = gethostbyname("www.google.com");
+                            $conexion = gethostbyname($hostAtestear);
                             //Si devuelve la dir IP es porque tengo internet
-                            if ($conexion != "www.google.com"): ?>
+                            if ($conexion != $hostAtestear): ?>
                                 <div  style="padding-top: 10px; border-bottom: 5px #00adf7 solid;">
                                   <!-- start feedwind code -->
                                   <script type="text/javascript">
-                                       rssmikle_url="http://udc.edu.ar";
+                                       rssmikle_url="http://udc.edu.ar/wordpress/feed/";
                                        rssmikle_frame_width="100%";
                                        rssmikle_frame_height="297";
                                        rssmikle_target="_blank";
