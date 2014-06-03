@@ -82,8 +82,8 @@
 .back-to-top{
     color: black !important;
 }
-/* defino el fondo del div que muestra el resumen de los cursos en el frontpage 
+/* defino el fondo del div que muestra el resumen de los cursos en el frontpage */
 .coursebox{
-    //background-color: #f33ed1 !important;
-    background-position: left .0em !important;
-}*/
+    background-color: #F6F6E8 !important;
+    //background-position: left .0em !important;
+}
