@@ -213,7 +213,7 @@ echo $OUTPUT->doctype() ?>
         <div style="float: right;">
             <div style="position: fixed;">
                 <?php $host = $CFG->wwwroot.'/theme/udcessential/layout/includes/ayudaGeneral.php'; ?>
-                <a href="<?php echo $host; ?>" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.svg" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
+                <a href="<?php echo $host; ?>" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
             </div>
         </div>
         <?php endif;?>
