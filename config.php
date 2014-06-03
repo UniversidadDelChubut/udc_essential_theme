@@ -152,6 +152,6 @@ if (check_browser_version('MSIE') && !check_browser_version('MSIE', '9.0')) {
     $THEME->javascripts[] = 'html5shiv';
 }
 
-//$THEME->enable_dock = true;
+$THEME->custompix = true;
 
-?>
+
