@@ -14,8 +14,8 @@
                         <p>Puede observar el contenido completo del curso que así lo habilite,<br>
                         pero no podrá participar en él. </p>
                         <p>Si usted quiere realizar algunos de estos cursos, por favor 
-                            <a href="<?php echo $loginUrl; ?>">identifíquese como usuario</a> o 
-                            <a href="<?php echo $registrarseUrl; ?>">regístrese</a>.
+                            <a href="<?php echo $loginUrl; ?>">identifíquese como usuario</a>
+							<!-- o <a href="<?php //echo $registrarseUrl; ?>">regístrese</a> -->.
                         </p>
                     </div>
                     <div class="modal-footer">
