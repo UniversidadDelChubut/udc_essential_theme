@@ -212,7 +212,8 @@ echo $OUTPUT->doctype() ?>
         <?php if(!(isloggedin()) || isguestuser()):?> <!-- si no esta logueado o si es el "invitado" lo muestro -->
         <div style="float: right;">
             <div style="position: fixed;">
-                <?php $host = 'http://udc.edu.ar';//$CFG->wwwroot.'/theme/udcessential/layout/includes/ayudaGeneral.php'; ?>
+                <?php $host = $CFG->wwwroot.'/theme/udcessential/layout/includes/ayudaGeneral.php'; ?>
+				<?php //$host = 'https://moodle.org/';?>
                 <a href="<?php echo $host; ?>" target="_blank"><img src="/moodle/theme/udcessential/pix/ayuda.png" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
             </div>
         </div>
@@ -277,8 +278,8 @@ echo $OUTPUT->doctype() ?>
                 <!-- Inicio RSS y los dos SLIDES -->
                 <div class="row-fluid">
                     <!-- INICIO del código RSS insertado -->
-                    <div class="span3" align="center">
-                          <?php
+                    <!--<div class="span3" align="center">
+                          <?php /*
                             $hostAtestear = "www.google.com";
                             // Veo si puedo obtener la dir IP y compruebo si hay internet o no
                             $conexion = gethostbyname($hostAtestear);
@@ -328,12 +329,12 @@ echo $OUTPUT->doctype() ?>
                                   <p> <!-- style="padding-top: 120px;" -->No Hay Conexión a Internet.<br>
                                       No se pueden mostrar las noticias vía RSS</p>
                               </div>
-                            <?php endif; ?>
-                    </div>
+                            <?php endif; */?>
+                    </div> -->	
                     <!-- FIN del código RSS insertado -->
 
                     <!-- Start Slideshow -->
-                    <div class="span6">
+                    <div class="span7">
                         <?php 
                                 if($PAGE->theme->settings->toggleslideshow==1) {
                                         require_once(dirname(__FILE__).'/includes/slideshow.php');
@@ -347,7 +348,7 @@ echo $OUTPUT->doctype() ?>
                     <!-- End Slideshow -->
 
                     <!-- Start Marketing Spots -->
-                    <div class="span3" style="float: right;">
+                    <div class="span5" style="float: right;">
                                 <?php
                                         if($PAGE->theme->settings->togglemarketing==1) {
                                                 require_once(dirname(__FILE__).'/includes/marketingspots.php');

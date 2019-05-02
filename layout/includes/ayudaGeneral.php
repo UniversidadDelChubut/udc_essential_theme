@@ -13,7 +13,7 @@ and open the template in the editor.
 //global $USER, $SESSION, $CFG, $OUTPUT; 
 
 //$custommenu = $OUTPUT->custom_menu();
-$RootDir = "http://social.udc.edu.ar";
+$RootDir = "http://cursos.udc.edu.ar";
 
 ?>
 <html>    
